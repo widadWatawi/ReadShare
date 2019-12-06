@@ -1,4 +1,6 @@
 package com.example.readshare;
 
-public class Inscription {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Inscription extends AppCompatActivity {
 }
