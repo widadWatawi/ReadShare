@@ -42,16 +42,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".DemanderLivre" >
-=======
+
         <activity android:name=".DemandeLivre.DemanderLivre" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
->>>>>>> aziza
         </activity>
         <activity android:name=".DescriptionLivre" >
         </activity>
