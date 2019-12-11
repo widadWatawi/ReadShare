@@ -1,4 +1,4 @@
-package com.example.readshare;
+package com.example.readshare.DemandeLivre;
 
 class ListDemandeLivre {
     private String titre;

@@ -11,10 +11,11 @@
         android:layout_height="60dp"
         android:layout_width="60dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/border_img_cercle"/>
 
     <TextView
-        android:id="@+id/titreLivre"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_toEndOf="@id/imageView"
@@ -22,15 +23,16 @@
         android:gravity="center_vertical"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
+        android:textStyle="bold"
         android:textColor="#333"
         android:textSize="16sp"/>
     <TextView
-        android:id="@+id/distance"
+        android:id="@+id/msg"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_toEndOf="@id/imageView"
         android:layout_toRightOf="@id/imageView"
-        android:layout_below="@id/titreLivre"
+        android:layout_below="@id/username"
         android:layout_marginLeft="10dp"
         android:textColor="#333"
         android:textSize="16sp"/>
