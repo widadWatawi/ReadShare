@@ -28,11 +28,30 @@
         </activity>
         <activity android:name=".BiblioEchange" >
         </activity>
-        <activity android:name=".DemandeEnvoye" >
+        <activity android:name=".DemandeEnvoye.DemandeEnvoye" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".DemandeRecu" >
+        <activity android:name=".DemandeRecu.DemandeRecu" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".DemanderLivre" >
+=======
+        <activity android:name=".DemandeLivre.DemanderLivre" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+>>>>>>> aziza
         </activity>
         <activity android:name=".DescriptionLivre" >
         </activity>

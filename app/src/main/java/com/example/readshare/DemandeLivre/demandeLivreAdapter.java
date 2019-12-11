@@ -1,4 +1,4 @@
-package com.example.readshare;
+package com.example.readshare.DemandeLivre;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.readshare.R;
 
 class demandeLivreAdapter extends RecyclerView.Adapter<demandeLivreAdapter.ViewHolder>{
 private ListDemandeLivre[] listdata;

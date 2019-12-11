@@ -1,4 +1,4 @@
-package com.example.readshare;
+package com.example.readshare.DemandeLivre;
 
 import android.os.Bundle;
 
@@ -6,6 +6,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.readshare.R;
+
 
 public class DemanderLivre extends AppCompatActivity {
     @Override
