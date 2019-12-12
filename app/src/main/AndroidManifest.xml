@@ -56,18 +56,22 @@
         </activity>
         <activity android:name=".Inscription" >
         </activity>
-        <activity android:name=".Menu" >
-        </activity>
         <activity android:name=".ModifierLivre" >
         </activity>
         <activity android:name=".ModifierProfile" >
         </activity>
         <activity android:name=".Profile" >
         </activity>
-        <activity android:name=".RechercheLivre" >
+        <activity android:name=".RechercheLivre.RechercheLivre" >
         </activity>
         <activity android:name=".TracabiliteLivre" >
         </activity>
+
+        <activity android:name=".RechercheLivre.MyMenu"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
     </application>
 
 </manifest>
