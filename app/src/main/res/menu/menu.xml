@@ -5,13 +5,11 @@
     tools:ShowIn="navigation_view"
     app:showAsAction="always">
 
+
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/action_search"
-            android:icon="@drawable/ic_search"
-            android:menuCategory="secondary"
-            app:showAsAction="always"
-            android:title="" />
+
+
+
         <item
             android:id="@+id/nav_home"
             android:title="Home"
@@ -27,5 +25,6 @@
             android:title="Chat"
             />
     </group>
+
 
 </menu>

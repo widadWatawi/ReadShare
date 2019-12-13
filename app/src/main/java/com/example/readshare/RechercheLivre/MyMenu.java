@@ -3,8 +3,12 @@ package com.example.readshare.RechercheLivre;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -19,7 +23,11 @@ import com.google.android.material.navigation.NavigationView;
 
 
 public class MyMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+
     private DrawerLayout drawer;
+    private Button search;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +39,19 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
         setSupportActionBar(toolbar);
 
 
-
         drawer = findViewById(R.id.drawer_layout);
+        search = findViewById(R.id.search_btn);
+
+
+        search.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getApplicationContext(), RechercheLivre2.class);
+                startActivity(intent);
+            }
+        });
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -50,6 +69,7 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
 
          */
     }
+
 
 
 
