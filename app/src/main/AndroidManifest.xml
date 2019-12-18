@@ -9,34 +9,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RechercheLivre.RechercheLivre2"></activity>
         <activity android:name=".MainActivity">
-
-
 
         </activity>
         <activity android:name=".Acceuil" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".AjouterLivre"></activity>
+        <activity android:name=".Authentification"></activity>
+        <activity android:name=".Biblio"></activity>
+        <activity android:name=".BiblioEchange"></activity>
+        <activity android:name=".DemandeEnvoye.DemandeEnvoye">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AjouterLivre" >
-        </activity>
-        <activity android:name=".Authentification" >
-        </activity>
-        <activity android:name=".Biblio" >
-        </activity>
-        <activity android:name=".BiblioEchange" >
-        </activity>
-        <activity android:name=".DemandeEnvoye.DemandeEnvoye" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".DemandeRecu.DemandeRecu" >
+        <activity android:name=".DemandeRecu.DemandeRecu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,12 +42,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".DemandeLivre.DemanderLivre" >
+
+
+        <activity android:name=".DemandeLivre.DemanderLivre">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
 
         </activity>
         <activity android:name=".DescriptionLivre" >
@@ -58,18 +60,20 @@
         </activity>
         <activity android:name=".Inscription" >
         </activity>
-        <activity android:name=".Menu" >
-        </activity>
         <activity android:name=".ModifierLivre" >
         </activity>
         <activity android:name=".ModifierProfile" >
         </activity>
         <activity android:name=".Profile" >
         </activity>
-        <activity android:name=".RechercheLivre" >
-        </activity>
+
         <activity android:name=".TracabiliteLivre" >
-        </activity>
+
+
+        <activity android:name=".RechercheLivre.RechercheLivre"></activity>
+        <activity
+            android:name=".RechercheLivre.MyMenu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

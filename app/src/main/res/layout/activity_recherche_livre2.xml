@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RechercheLivre.RechercheLivre2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <SearchView
+                android:id="@+id/simpleSearchView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".70"/>
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="CANCEL"/>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/cupid"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="romance"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/smile"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="comedy"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/story"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="fantasy"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/sun"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="slice of life"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+        </TableRow>
+
+            <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/historic_theatre"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="history"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="horror"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/football"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="sport"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/ufo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="sci-fi"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+        </TableRow>
+
+            <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+                <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:background="@drawable/heart_warming"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="30dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginBottom="0dp"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="heart-warming"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+                <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:background="@drawable/superhero"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="30dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginBottom="0dp"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="heart-warming"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/mask"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="drama"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/target"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="action"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+        </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/knife"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="thriller"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:background="@drawable/badge"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="30dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginBottom="0dp"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="crime"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:background="@drawable/book"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="30dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginBottom="0dp"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="informative"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

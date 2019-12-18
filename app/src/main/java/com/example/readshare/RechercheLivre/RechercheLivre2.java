@@ -1,38 +1,33 @@
-package com.example.readshare;
+package com.example.readshare.RechercheLivre;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.core.view.MenuItemCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-import com.example.readshare.RechercheLivre.MyMenu;
+import com.example.readshare.R;
 
+public class RechercheLivre2 extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
+    private Button cancel;
 
-    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recherche_livre2);
 
-        btn = findViewById(R.id.btnLogin);
-        btn.setOnClickListener(new View.OnClickListener()
+        cancel = findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 Intent intent = new Intent(getApplicationContext(), MyMenu.class);
                 startActivity(intent);
-               }
+            }
         });
-
     }
-
-
 }
