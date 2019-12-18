@@ -67,7 +67,7 @@
         <activity android:name=".Profile" >
         </activity>
 
-        <activity android:name=".TracabiliteLivre" >
+        <activity android:name=".TracabiliteLivre" ></activity>
 
 
         <activity android:name=".RechercheLivre.RechercheLivre"></activity>
