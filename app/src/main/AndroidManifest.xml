@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.readshare">
 
+    <!--Internet Permission-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,42 +12,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RechercheLivre.RechercheLivre2"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.RechercheLivre.RechercheLivre2"></activity>
+        <activity android:name=".Activity.MainActivity">
 
         </activity>
-        <activity android:name=".Acceuil" >
+        <activity android:name=".Activity.Acceuil" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 
-        <activity android:name=".AjouterLivre"></activity>
-        <activity android:name=".Authentification"></activity>
-        <activity android:name=".Biblio"></activity>
-        <activity android:name=".BiblioEchange"></activity>
-        <activity android:name=".DemandeEnvoye.DemandeEnvoye">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activity.AjouterLivre"></activity>
+        <activity android:name=".Activity.Authentification"></activity>
+        <activity android:name=".Activity.Biblio"></activity>
+        <activity android:name=".Activity.BiblioEchange"></activity>
+        <activity android:name=".Activity.DemandeEnvoye.DemandeEnvoye">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".DemandeRecu.DemandeRecu">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activity.DemandeRecu.DemandeRecu">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
 
-        <activity android:name=".DemandeLivre.DemanderLivre">
+        <activity android:name=".Activity.DemandeLivre.DemanderLivre">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,25 +45,25 @@
 
 
         </activity>
-        <activity android:name=".DescriptionLivre" >
+        <activity android:name=".Activity.DescriptionLivre" >
         </activity>
-        <activity android:name=".Historique" >
+        <activity android:name=".Activity.Historique" >
         </activity>
-        <activity android:name=".Inscription" >
+        <activity android:name=".Activity.Inscription" >
         </activity>
-        <activity android:name=".ModifierLivre" >
+        <activity android:name=".Activity.ModifierLivre" >
         </activity>
-        <activity android:name=".ModifierProfile" >
+        <activity android:name=".Activity.ModifierProfile" >
         </activity>
-        <activity android:name=".Profile" >
+        <activity android:name=".Activity.Profile" >
         </activity>
 
-        <activity android:name=".TracabiliteLivre" ></activity>
+        <activity android:name=".Activity.TracabiliteLivre" ></activity>
 
 
-        <activity android:name=".RechercheLivre.RechercheLivre"></activity>
+        <activity android:name=".Activity.RechercheLivre.RechercheLivre"></activity>
         <activity
-            android:name=".RechercheLivre.MyMenu"
+            android:name=".Activity.RechercheLivre.MyMenu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

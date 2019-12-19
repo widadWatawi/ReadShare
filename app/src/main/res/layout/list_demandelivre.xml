@@ -6,19 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/border">
+
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="110dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:scaleType="fitXY"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/border_image"
-        />
+         android:id="@+id/imageView"
+         android:layout_width="100dp"
+         android:layout_height="110dp"
+         android:layout_centerVertical="true"
+         android:layout_alignParentStart="true"
+         android:scaleType="fitXY"
+         android:layout_marginBottom="15dp"
+         android:layout_marginTop="15dp"
+         android:layout_marginLeft="10dp"
+         android:layout_alignParentLeft="true"
+
+         android:background="@drawable/img1"
+         />
 
     <TextView
         android:id="@+id/titreLivre"
@@ -31,31 +33,32 @@
         android:layout_marginTop="15dp"
         android:textColor="#333"
         android:textSize="16sp"/>
-    <TextView
-        android:id="@+id/distance"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_toEndOf="@id/imageView"
-        android:layout_toRightOf="@id/imageView"
-        android:layout_below="@id/titreLivre"
-        android:drawableLeft="@drawable/ic_place"
-        android:gravity="left"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="120dp"
-        android:textColor="#333"
-        android:textSize="16sp"/>
+   <TextView
+          android:id="@+id/distance"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_toEndOf="@id/imageView"
+          android:layout_toRightOf="@id/imageView"
+          android:layout_below="@id/titreLivre"
+          android:drawableLeft="@drawable/ic_place"
+          android:gravity="left"
+          android:layout_marginTop="25dp"
+          android:layout_marginLeft="120dp"
+          android:textColor="#333"
+          android:text="150m"
+          android:textSize="16sp"/>
 
-    <Button
-        android:id="@+id/request"
-        android:layout_width="90dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/distance"
-        android:layout_toRightOf="@+id/imageView"
-        android:background="@drawable/btn_rounded"
-        android:hint="Request"
-        android:textColor="#ffffff"
-        android:textSize="16dp"
-        android:layout_marginLeft="120dp"
-        android:textStyle="bold" />
+      <Button
+          android:id="@+id/request"
+          android:layout_width="90dp"
+          android:layout_height="32dp"
+          android:layout_below="@+id/distance"
+          android:layout_toRightOf="@+id/imageView"
+          android:background="@drawable/btn_rounded"
+          android:hint="Request"
+          android:textColor="#ffffff"
+          android:textSize="16dp"
+          android:layout_marginLeft="120dp"
+          android:textStyle="bold" />
 
-</RelativeLayout>
+  </RelativeLayout>
