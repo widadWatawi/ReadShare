@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.readshare">
 
+
     <!--Internet Permission-->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,23 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".Activity.Message"
             android:label="@string/title_activity_message"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
+
         <activity android:name=".Activity.RechercheLivre.RechercheLivre2"></activity>
+
         <activity android:name=".Activity.MainActivity">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                     <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
 
         </activity>
         <activity android:name=".Activity.Acceuil" >
@@ -42,6 +44,7 @@
         <activity android:name=".Activity.BiblioEchange"></activity>
         <activity android:name=".Activity.DescriptionLivre" >
         </activity>
+
         <activity android:name=".Activity.Historique" >
         </activity>
         <activity android:name=".Activity.Inscription" >

@@ -50,7 +50,7 @@ public class Inscription extends AppCompatActivity {
 
     }
 
-    class HttpReqTask extends AsyncTask<Void, Void,ResponseRegist> {
+    class HttpReqTask extends AsyncTask<Void, Void, ResponseRegist> {
 
         @SuppressLint("WrongThread")
         @Override
