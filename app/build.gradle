@@ -55,16 +55,16 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
-<<<<<<< HEAD
+
 
 
     //Retrofit Dependencies
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.google.code.gson:gson:2.0.1'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-=======
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.google.code.gson:gson:2.0.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
     implementation 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.4.1'
->>>>>>> ee430e65149372dd250c62c5cb617b091328ebe6
+
 
 }

@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.readshare.R;
+import com.example.readshare.ResponseRegist;
+
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
@@ -47,7 +50,7 @@ public class Inscription extends AppCompatActivity {
 
     }
 
-    class HttpReqTask extends AsyncTask<Void, Void,ResponseRegist> {
+    class HttpReqTask extends AsyncTask<Void, Void, ResponseRegist> {
 
         @SuppressLint("WrongThread")
         @Override

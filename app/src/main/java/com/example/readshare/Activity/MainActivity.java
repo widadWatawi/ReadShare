@@ -7,11 +7,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
-<<<<<<< HEAD:app/src/main/java/com/example/readshare/Activity/MainActivity.java
-=======
 import android.util.Log;
 import android.view.Menu;
->>>>>>> ee430e65149372dd250c62c5cb617b091328ebe6:app/src/main/java/com/example/readshare/MainActivity.java
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.readshare.R;
 import com.example.readshare.Activity.RechercheLivre.MyMenu;
+import com.example.readshare.ResponseAuth;
 
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -30,7 +29,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     EditText UsernameEt, PasswordEt;
-    //////////
+
     Button btnLogin , btnSignin;
 
 
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    class HttpReqTask extends AsyncTask<Void,Void,ResponseAuth> {
+    class HttpReqTask extends AsyncTask<Void,Void, ResponseAuth> {
 
 
 

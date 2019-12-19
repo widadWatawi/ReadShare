@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.readshare">
 
-<<<<<<< HEAD
-    <!--Internet Permission-->
-=======
->>>>>>> ee430e65149372dd250c62c5cb617b091328ebe6
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,32 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".Activity.RechercheLivre.RechercheLivre2"></activity>
         <activity android:name=".Activity.MainActivity">
-=======
-        <activity android:name=".Inscription" />
-        <activity android:name=".RechercheLivre.RechercheLivre2" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
->>>>>>> ee430e65149372dd250c62c5cb617b091328ebe6
+
 
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".Activity.Acceuil" >
 
 
-=======
-        <activity android:name=".Acceuil" />
-        <activity android:name=".AjouterLivre" />
-        <activity android:name=".Authentification" />
-        <activity android:name=".Biblio" />
-        <activity android:name=".BiblioEchange" />
-        <activity android:name=".DemandeEnvoye.DemandeEnvoye">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
->>>>>>> ee430e65149372dd250c62c5cb617b091328ebe6
 
         </activity>
 
@@ -69,7 +49,7 @@
         </activity>
         <activity android:name=".Activity.DescriptionLivre" >
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".Activity.Historique" >
         </activity>
         <activity android:name=".Activity.Inscription" >
@@ -88,18 +68,7 @@
         <activity
             android:name=".Activity.RechercheLivre.MyMenu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-=======
-        <activity android:name=".DescriptionLivre" />
-        <activity android:name=".Historique" />
-        <activity android:name=".ModifierLivre" />
-        <activity android:name=".ModifierProfile" />
-        <activity android:name=".Profile" />
-        <activity android:name=".RechercheLivre.RechercheLivre" />
-        <activity android:name=".TracabiliteLivre" />
-        <activity
-            android:name=".RechercheLivre.MyMenu"
-            android:theme="@style/AppTheme.NoActionBar" />
->>>>>>> ee430e65149372dd250c62c5cb617b091328ebe6
+
     </application>
 
 </manifest>
