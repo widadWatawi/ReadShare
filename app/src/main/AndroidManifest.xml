@@ -18,6 +18,7 @@
             android:name=".Activity.Message"
             android:label="@string/title_activity_message"
             android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
 
 
