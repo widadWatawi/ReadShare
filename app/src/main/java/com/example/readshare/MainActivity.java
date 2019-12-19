@@ -15,21 +15,30 @@ import com.example.readshare.RechercheLivre.MyMenu;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn;
+    Button btnsignup;
+    Button btnsignin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn = findViewById(R.id.btnLogin);
-        btn.setOnClickListener(new View.OnClickListener()
+        btnsignup = findViewById(R.id.btnLogin);
+        btnsignin=findViewById(R.id.btnSignin);
+        btnsignup.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(getApplicationContext(), MyMenu.class);
+                Intent intent = new Intent(getApplicationContext(), Inscription.class);
                 startActivity(intent);
                }
+        });
+        btnsignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),MyMenu.class);
+                startActivity(intent);
+            }
         });
 
     }

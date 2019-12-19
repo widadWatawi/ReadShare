@@ -1,10 +1,10 @@
-package com.example.readshare.DemandeRecu;
+package com.example.readshare.ui.main;
 
-public class ListSent {
+class ListReceived {
     private String username;
     private String message;
     private int imgId;
-    public ListSent(String username,String message, int imgId) {
+    public ListReceived(String username,String message, int imgId) {
         this.username = username;
         this.message=message;
         this.imgId = imgId;

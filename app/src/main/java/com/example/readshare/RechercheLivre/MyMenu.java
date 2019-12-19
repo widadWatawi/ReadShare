@@ -1,14 +1,17 @@
 package com.example.readshare.RechercheLivre;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -18,29 +21,39 @@ import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import com.example.readshare.Acceuil;
+import com.example.readshare.Biblio;
+
+import com.example.readshare.DemandeLivre.DemanderLivre;
+import com.example.readshare.Message;
+import com.example.readshare.Profile;
 import com.example.readshare.R;
 import com.google.android.material.navigation.NavigationView;
 
 
-public class MyMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MyMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    private DrawerLayout drawer;
-    private Button search;
+    public DrawerLayout drawer;
+    public Button search;
+    public FrameLayout contentFrameLayout;
+    public Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         setTitle("Menu");
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
         drawer = findViewById(R.id.drawer_layout);
         search = findViewById(R.id.search_btn);
+        contentFrameLayout = findViewById(R.id.fragment_container);
 
 
         search.setOnClickListener(new View.OnClickListener()
@@ -86,29 +99,31 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Intent intent=null;
         switch (menuItem.getItemId()){
-            /*
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HomeFragment()).commit();
+                intent=new Intent(getApplicationContext(), Acceuil.class);
+                startActivity(intent);
                 break;
-            case R.id.nav_timesheet:
-                Intent ma = getIntent();
-                String login = ma.getStringExtra("login");
-                Bundle bundle = new Bundle();
-                bundle.putString("params",login);
-                // set MyFragment Arguments
-                TimesheetFragment tf = new TimesheetFragment();
-                tf.setArguments(bundle);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        tf).commit();
+            case R.id.nav_profile:
+                intent=new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
                 break;
-            case R.id.nav_chat:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ChatFragment()).commit();
+            case R.id.nav_library:
+                intent=new Intent(getApplicationContext(), Biblio.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_message:
+                intent=new Intent(getApplicationContext(), Message.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_request:
+                intent=new Intent(getApplicationContext(), DemanderLivre.class);
+                startActivity(intent);
                 break;
 
-             */
+
+
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -127,4 +142,5 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
         finish();
         super.onStop();
     }
+
 }

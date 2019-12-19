@@ -1,4 +1,4 @@
-package com.example.readshare.DemandeRecu;
+package com.example.readshare.ui.main;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,39 +8,35 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.readshare.DemandeEnvoye.ListReceived;
-import com.example.readshare.DemandeEnvoye.ReceivedAdapter;
 import com.example.readshare.R;
 
-public class SentAdapter extends RecyclerView.Adapter<SentAdapter.ViewHolder>{
-    private ListSent[] lstSent;
+public class ReceivedAdapter  extends RecyclerView.Adapter<ReceivedAdapter.ViewHolder>{
+    private ListReceived[] lstReceived;
 
     // RecyclerView recyclerView;
-    public SentAdapter(ListSent[] listSent) {
-        this.lstSent =listSent ;
+    public ReceivedAdapter(ListReceived[] lstReceived) {
+        this.lstReceived =lstReceived ;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.list_sent, parent, false);
+        View listItem= layoutInflater.inflate(R.layout.list_received, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
 
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final ListSent myListsent = lstSent[position];
-        holder.username.setText(lstSent[position].getUsername());
-        holder.message.setText(lstSent[position].getMessage());
-        holder.imageView.setImageResource(lstSent[position].getImgId());
+        final ListReceived myListreceived = lstReceived[position];
+        holder.username.setText(lstReceived[position].getUsername());
+        holder.message.setText(lstReceived[position].getMessage());
+        holder.imageView.setImageResource(lstReceived[position].getImgId());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"click on item: "+myListsent.getUsername(),Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(),"click on item: "+myListreceived.getUsername(),Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -48,7 +44,7 @@ public class SentAdapter extends RecyclerView.Adapter<SentAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return lstSent.length;
+        return lstReceived.length;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -65,4 +61,3 @@ public class SentAdapter extends RecyclerView.Adapter<SentAdapter.ViewHolder>{
         }
     }
 }
-

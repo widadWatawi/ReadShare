@@ -1,14 +1,14 @@
-package com.example.readshare.DemandeEnvoye;
+package com.example.readshare.ui.main;
 
-public class ListReceived{
-        private String username;
-        private String message;
-        private int imgId;
-        public ListReceived(String username,String message, int imgId) {
-            this.username = username;
-            this.message=message;
-            this.imgId = imgId;
-        }
+class ListSent {
+    private String username;
+    private String message;
+    private int imgId;
+    public ListSent(String username,String message, int imgId) {
+        this.username = username;
+        this.message=message;
+        this.imgId = imgId;
+    }
 
     public String getUsername() {
         return username;
