@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.readshare">
 
+    <!--Internet Permission-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,37 +13,54 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Message"
+            android:name=".Activity.Message"
             android:label="@string/title_activity_message"
             android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".RechercheLivre.RechercheLivre2" />
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Acceuil">
+
+        <activity android:name=".Activity.RechercheLivre.RechercheLivre2"></activity>
+        <activity android:name=".Activity.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
-        <activity android:name=".AjouterLivre" />
-        <activity android:name=".Authentification" />
-        <activity android:name=".Biblio" />
-        <activity android:name=".BiblioEchange" />
-        <activity android:name=".DemandeLivre.DemanderLivre">
+        <activity android:name=".Activity.Acceuil" >
         </activity>
-        <activity android:name=".DescriptionLivre"></activity>
-        <activity android:name=".Historique"></activity>
-        <activity android:name=".Inscription"></activity>
-        <activity android:name=".ModifierLivre"></activity>
-        <activity android:name=".ModifierProfile"></activity>
-        <activity android:name=".Profile"></activity>
-        <activity android:name=".TracabiliteLivre" />
-        <activity android:name=".RechercheLivre.RechercheLivre" />
+        <activity android:name=".Activity.DemandeLivre.DemanderLivre">
+        </activity>
+
+        <activity android:name=".Activity.AjouterLivre"></activity>
+        <activity android:name=".Activity.Authentification"></activity>
+        <activity android:name=".Activity.Biblio"></activity>
+        <activity android:name=".Activity.BiblioEchange"></activity>
+        <activity android:name=".Activity.DescriptionLivre" >
+        </activity>
+        <activity android:name=".Activity.Historique" >
+        </activity>
+        <activity android:name=".Activity.Inscription" >
+        </activity>
+        <activity android:name=".Activity.ModifierLivre" >
+        </activity>
+        <activity android:name=".Activity.ModifierProfile" >
+        </activity>
+        <activity android:name=".Activity.Profile" >
+        </activity>
+
+        <activity android:name=".Activity.TracabiliteLivre" ></activity>
+
+
+        <activity android:name=".Activity.RechercheLivre.RechercheLivre"></activity>
         <activity
-            android:name=".RechercheLivre.MyMenu"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".Activity.RechercheLivre.MyMenu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>
