@@ -59,7 +59,7 @@ public class Inscription extends AppCompatActivity {
             try{
 
                 if(Password.getText().toString().equals(Password2.getText().toString())){
-                    String apiUrl = "http://192.168.0.165:8888/rest/registration/{login}/{firstname}/{lastname}/{email}/{password}";
+                    String apiUrl = "http://192.168.0.165:8081/rest/registration/{login}/{firstname}/{lastname}/{email}/{password}";
                     RestTemplate rt = new RestTemplate();
                     rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                     Map<String, Object> params = new HashMap<>();
