@@ -1,6 +1,6 @@
 package com.example.readshare;
 
-public class ResponseRegist {
+public class ResponseRegist extends ResponseAuth {
     private Boolean Success;
 
     private String Message;
