@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/relativeLayout"
+    android:id="@+id/linearLayout"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/border">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.7">
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView"
         android:layout_height="60dp"
         android:layout_width="60dp"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/border_img_cercle"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
     <TextView
         android:id="@+id/username"
@@ -21,9 +30,9 @@
         android:layout_toEndOf="@id/imageView"
         android:layout_toRightOf="@id/imageView"
         android:gravity="center_vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
         android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
         android:textColor="#333"
         android:textSize="16sp"/>
     <TextView
@@ -33,9 +42,16 @@
         android:layout_toEndOf="@id/imageView"
         android:layout_toRightOf="@id/imageView"
         android:layout_below="@id/username"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:textColor="#333"
         android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="right">
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -43,7 +59,9 @@
         android:layout_toEndOf="@id/imageView"
         android:layout_toRightOf="@id/imageView"
         android:layout_below="@id/username"
-        android:layout_marginLeft="220dp"/>
+        android:layout_marginTop="25dp"
+        />
+    </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

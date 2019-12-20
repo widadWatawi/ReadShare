@@ -12,10 +12,12 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="EditScreenTextInputLayoutStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorControlNormal">@color/textInputLayout</item>
         <item name="colorControlActivated">@color/textInputLayout</item>
@@ -23,5 +25,9 @@
         <item name="colorAccent">@color/textInputLayout</item>
         <item name="android:textColorHint">@color/textInputLayout</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

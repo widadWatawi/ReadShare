@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".Acceuil">
+=======
+    tools:context=".Activity.Acceuil">
+>>>>>>> 703c24f8278d87f7d43a66a96e21bc13c7a70546
 
     <ViewFlipper
         android:id="@+id/V_flipper"
