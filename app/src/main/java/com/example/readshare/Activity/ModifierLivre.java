@@ -1,4 +1,6 @@
 package com.example.readshare.Activity;
 
-public class ModifierLivre {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ModifierLivre extends AppCompatActivity {
 }

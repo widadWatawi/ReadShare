@@ -3,6 +3,10 @@
     <string name="navigation_drawer_open">Open navigation Drawer</string>
     <string name="navigation_drawer_close">Close navigation Drawer</string>
     <string name="title_activity_message">Message</string>
-    <string name="tab_text_1">Received</string>
-    <string name="tab_text_2">Sent</string>
+    <string name="received">Received</string>
+    <string name="sent">Sent</string>
+    <string name="title_activity_library">Library</string>
+    <string name="library">Library</string>
+    <string name="history">History</string>
+    <string name="traceability">Traceability</string>
 </resources>

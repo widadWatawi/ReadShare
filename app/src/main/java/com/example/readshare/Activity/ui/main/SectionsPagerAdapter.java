@@ -1,7 +1,8 @@
-package com.example.readshare.Activity.main;
+package com.example.readshare.Activity.ui.main;
 
 import android.content.Context;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -16,7 +17,7 @@ import com.example.readshare.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.received, R.string.sent};
+    private static final int[] TAB_TITLES = new int[]{R.string.library, R.string.history,R.string.traceability};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -29,29 +30,27 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new FragmentReceived();
+                fragment = new FragmentLibrary();
                 break;
             case 1:
-                fragment = new FragmentSent();
+                fragment = new FragmentHistory();
+                break;
+            case 2:
+                fragment=new FragmentTraceability();
                 break;
         }
         return fragment;
     }
 
+    @Nullable
     @Override
-    public int getCount() {
-        // Show 3 total pages.
-        return 2;
+    public CharSequence getPageTitle(int position) {
+        return mContext.getResources().getString(TAB_TITLES[position]);
     }
 
     @Override
-    public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "Received";
-            case 1:
-                return "Sent";
-        }
-        return null;
+    public int getCount() {
+        // Show 3 total pages.
+        return 3;
     }
 }
