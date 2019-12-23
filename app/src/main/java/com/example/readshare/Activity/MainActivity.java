@@ -165,13 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
 
-            /*
-            for(com.example.readshare.User u : users){
 
-                Log.i("com.example.readshare.User : ","######################");
-                Log.i("User_id : ",String.valueOf(u.getId()));
-                Log.i("User_name : ",String.valueOf(u.getName()));
-                Log.i("User_lastname : ",String.valueOf(u.getLastName()));
 
 
             }

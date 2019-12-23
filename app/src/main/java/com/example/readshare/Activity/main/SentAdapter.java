@@ -12,56 +12,58 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readshare.Model.Demande;
 import com.example.readshare.R;
 import com.example.readshare.Activity.main.ListSent;
 
+import java.util.List;
+
 public class SentAdapter extends RecyclerView.Adapter<SentAdapter.ViewHolder>{
-    private ListSent[] lstSent;
+    private List<Demande> lstReceived;
 
     // RecyclerView recyclerView;
-    public SentAdapter(ListSent[] listSent) {
-        this.lstSent =listSent ;
+    public SentAdapter(List<Demande> lstReceived) {
+        this.lstReceived =lstReceived ;
     }
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SentAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem= layoutInflater.inflate(R.layout.list_sent, parent, false);
-        ViewHolder viewHolder = new ViewHolder(listItem);
+        SentAdapter.ViewHolder viewHolder = new SentAdapter.ViewHolder(listItem);
         return viewHolder;
     }
 
-
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        final ListSent myListsent = lstSent[position];
-        holder.username.setText(lstSent[position].getUsername());
-        holder.message.setText(lstSent[position].getMessage());
-        holder.imageView.setImageResource(lstSent[position].getImgId());
-        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(SentAdapter.ViewHolder holder, int position) {
+        //final ListReceived myListreceived = lstReceived[position];
+        //Log.d("hh",lstReceived.get(position).getLivre_received().getTitre());
+        holder.titre.setText(lstReceived.get(position).getLivre_received().getTitre());
+        holder.nom.setText(lstReceived.get(position).getUser_sender().getNom()+ " "+lstReceived.get(position).getUser_sender().getPrenom());
+        /*holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"click on item: "+myListsent.getUsername(),Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(),"click on item: "+myListreceived.getUsername(),Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
     }
 
 
     @Override
     public int getItemCount() {
-        return lstSent.length;
+        return lstReceived.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;
-        public TextView username;
-        public TextView message;
-        public LinearLayout linearLayout;
+
+        public TextView titre;
+        public TextView nom;
+        public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            this.imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            this.username = (TextView) itemView.findViewById(R.id.username);
-            this.message = (TextView) itemView.findViewById(R.id.msg);
-            linearLayout = itemView.findViewById(R.id.linearLayout);
+
+            this.titre = (TextView) itemView.findViewById(R.id.titre);
+            this.nom = (TextView) itemView.findViewById(R.id.nom);
+            relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }
 }
