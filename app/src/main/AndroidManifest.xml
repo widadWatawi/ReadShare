@@ -16,16 +16,12 @@
             android:name=".Activity.Library"
             android:label="@string/title_activity_library"
             android:theme="@style/AppTheme.NoActionBar">
-<<<<<<< HEAD
 
-
-
-=======
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
->>>>>>> 6419bf78b8199da1450b529c2b50f36434e55610
+
         </activity>
         <activity
             android:name=".Activity.Message"
@@ -42,22 +38,13 @@
         </intent-filter></activity>
 
 
-
-<<<<<<< HEAD
-=======
-
         <activity android:name=".Activity.MainActivity">
->>>>>>> 6419bf78b8199da1450b529c2b50f36434e55610
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6419bf78b8199da1450b529c2b50f36434e55610
         </activity>
         <activity android:name=".Activity.Acceuil" >
         </activity>
