@@ -13,26 +13,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readshare.Model.Historique;
+import com.example.readshare.Model.Livre;
 import com.example.readshare.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LibraryAdapter extends BaseAdapter {
     Context context;
-    private final String[] values;
-    private  final int[] images;
+    private List<Livre> liste;
     View view;
 
-    public LibraryAdapter(Context context, String[] values,int[] images) {
+    public LibraryAdapter(Context context,List<Livre> liste) {
         this.context=context;
-        this.values=values;
-        this.images=images;
+        this.liste = liste;
     }
 
 
     @Override
     public int getCount() {
-        return values.length;
+        return liste.size();
     }
 
     @Override
@@ -52,9 +53,9 @@ public class LibraryAdapter extends BaseAdapter {
             view=new View(context);
             view=layoutInflater.inflate(R.layout.list_biblio,null);
             ImageView imageView=view.findViewById(R.id.imageLivre);
-            TextView textView=view.findViewById(R.id.textLivre);
-            imageView.setImageResource(images[position]);
-            textView.setText(values[position]);
+            TextView textView=view.findViewById(R.id.titre);
+            //imageView.setImageResource(images[position]);
+            textView.setText(liste.get(position).getTitre());
         }
         return view;
     }

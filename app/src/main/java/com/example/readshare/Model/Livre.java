@@ -13,6 +13,9 @@ public class Livre {
     @Expose
     private String titre;
 
+    @SerializedName("user_actuel")
+    @Expose
+    private User user_actuel;
 
     public Livre() {
     }

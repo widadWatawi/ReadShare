@@ -10,10 +10,10 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="fitXY"
-        android:background="@drawable/border_image" />
+        android:background="@drawable/img1" />
 
     <TextView
-        android:id="@+id/titleBook"
+        android:id="@+id/titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

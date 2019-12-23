@@ -11,4 +11,7 @@ public interface LivreService {
 
     @GET("livres/")
     Call<List<Livre>> getLivres();
+
+    @GET("api/library/1")
+    Call<List<Livre>> getLibrary();
 }
