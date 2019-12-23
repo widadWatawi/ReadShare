@@ -1,6 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView android:layout_height="match_parent"
+    android:background="#eb2352" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-</LinearLayout>
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        >
+        <ImageView
+            android:gravity="center"
+            android:id="@+id/imageView1"
+            android:layout_width="200dp"
+            android:layout_marginTop="25dp"
+
+
+            android:layout_height="100dp"
+            android:src="@drawable/addbook"
+            android:layout_centerHorizontal="true"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="150dp"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#96ffffff"
+                android:theme="@style/EditScreenTextInputLayoutStyle">
+
+                <EditText
+                    android:id="@+id/titre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/calibri"
+
+                    android:drawableRight="@drawable/pencil"
+                    android:hint="Titre"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#96ffffff"
+                android:theme="@style/EditScreenTextInputLayoutStyle">
+
+                <EditText
+                    android:id="@+id/auteur"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/calibri"
+                    android:drawableRight="@drawable/pencil"
+                    android:hint="Description"
+                    android:inputType="text"
+                    android:layout_marginBottom="10dp"
+                    android:maxLines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#96ffffff"
+                android:theme="@style/EditScreenTextInputLayoutStyle">
+
+                <EditText
+                    android:id="@+id/genre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/pencil"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/calibri"
+                    android:hint="Auteur"
+                    android:inputType="text"
+                    android:layout_marginBottom="10dp"
+                    android:maxLines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#96ffffff"
+                android:theme="@style/EditScreenTextInputLayoutStyle">
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/calibri"
+                    android:hint="Auteur"
+                    android:drawableRight="@drawable/pencil"
+                    android:inputType="text"
+                    android:layout_marginBottom="10dp"
+                    android:maxLines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/btnadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/calibri"
+                android:text="update changes "
+                android:textStyle="bold"
+                android:textColor="#ff0000"
+                android:background="#ffffff"
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

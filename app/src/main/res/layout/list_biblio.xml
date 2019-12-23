@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FDF1B8"
+    android:padding="10dp">
+    <!--
+    grid items for RecyclerView
+    -->
+
+    <ImageView
+        android:id="@+id/imageLivre"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/border_image" />
+
+    <TextView
+        android:id="@+id/textLivre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="#060100"/>
+</LinearLayout>
