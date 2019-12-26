@@ -17,11 +17,6 @@
             android:label="@string/title_activity_library"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
         <activity
             android:name=".Activity.Message"
@@ -29,24 +24,23 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Activity.RechercheLivre.RechercheLivre2"></activity>
         <activity android:name=".Activity.Inscription"></activity>
-        <activity android:name=".Acceuil" > </activity>
-        <activity android:name=".AjouterLivre"
-            > <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".AjouterLivre">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        </activity>
 
 
         <activity android:name=".Activity.MainActivity">
 
+        </activity>
+        <activity android:name=".Activity.Acceuil" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-        </activity>
-        <activity android:name=".Activity.Acceuil" >
+
+
         </activity>
         <activity android:name=".Activity.DemandeLivre.DemanderLivre">
         </activity>

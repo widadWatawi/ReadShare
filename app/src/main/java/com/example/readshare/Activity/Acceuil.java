@@ -3,6 +3,7 @@ package com.example.readshare.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,17 +11,28 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readshare.Activity.DemandeLivre.DemanderLivre;
+import com.example.readshare.Activity.DemandeLivre.demandeLivreAdapter;
+import com.example.readshare.Model.Livre;
+import com.example.readshare.Network.LivreService;
+import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.R;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Acceuil extends AppCompatActivity {
 
 
     ViewFlipper V_flipper;
     RecyclerView recyclerView;
+    RecyclerView recyclerView_note;
+    RecyclerView recyclerView_last;
 
-    ArrayList<MainModel> mainModels ;
     MainAdapter mainAdapter ;
 
     @Override
@@ -33,22 +45,73 @@ public class Acceuil extends AppCompatActivity {
         if(recyclerView == null){
             Log.d("tst", "null");
         }
-        Integer[] langLogo ={R.drawable.dotnet,R.drawable.dotnet,R.drawable.dotnet,R.drawable.dotnet};
-        String[] langName = {"first book","Dracula","third book","aux champs"};
-        mainModels =new ArrayList<>();
-        for (int i=0;i<langLogo.length;i++){
-            MainModel model =new MainModel(langLogo[i],langName[i]);
-            mainModels.add(model);
-        }
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(
-                Acceuil.this,LinearLayoutManager.HORIZONTAL,false
-        );
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        mainAdapter = new MainAdapter( Acceuil.this,mainModels);
-        recyclerView.setAdapter(mainAdapter);
+        LivreService service = RetrofitClient.getClient().create(LivreService.class);
+
+        /*Call the method with parameter in the interface to get the employee data*/
+        Call<List<Livre>> call = service.getLivres();
+
+        Call<List<Livre>> callbest = service.getBest();
+        Call<List<Livre>> calllast = service.getLast();
+
+        /*Log the URL called*/
+        Log.wtf("URL Called", callbest.request().url() + "");
+
+        call.enqueue(new Callback<List<Livre>>() {
+
+            @Override
+            public void onResponse(Call<List<Livre>> call, Response<List<Livre>> response) {
+                if (response.isSuccessful()) {
+                    List<Livre> livres= response.body();
+                    generateEmployeeList(livres);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Livre>> call, Throwable t) {
+                Toast.makeText(Acceuil.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        callbest.enqueue(new Callback<List<Livre>>() {
+
+            @Override
+            public void onResponse(Call<List<Livre>> call, Response<List<Livre>> response) {
+                if (response.isSuccessful()) {
+                    List<Livre> livres= response.body();
+                    generateEmployeeList_note(livres);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Livre>> call, Throwable t) {
+                Toast.makeText(Acceuil.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        calllast.enqueue(new Callback<List<Livre>>() {
+
+            @Override
+            public void onResponse(Call<List<Livre>> call, Response<List<Livre>> response) {
+                if (response.isSuccessful()) {
+                    List<Livre> livres= response.body();
+                    generateEmployeeList_last(livres);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Livre>> call, Throwable t) {
+                Toast.makeText(Acceuil.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
 
         for (int i=0 ;i< images.length ;i++){
             flipperImages(images[i]);
@@ -59,6 +122,51 @@ public class Acceuil extends AppCompatActivity {
             flipperImages(image);
         }
     }
+
+
+    private void generateEmployeeList_note(List<Livre> empDataList) {
+
+        recyclerView_note = findViewById(R.id.recycler_note);
+       mainAdapter = new MainAdapter(empDataList);
+        LinearLayoutManager layoutManager_note = new LinearLayoutManager(
+                Acceuil.this,LinearLayoutManager.HORIZONTAL,false
+        );
+        recyclerView_note.setLayoutManager(layoutManager_note);
+        recyclerView_note.setItemAnimator(new DefaultItemAnimator());
+        recyclerView_note.setAdapter(mainAdapter);
+    }
+
+    private void generateEmployeeList_last(List<Livre> empDataList) {
+
+        recyclerView_last = findViewById(R.id.recycler_last);
+        mainAdapter = new MainAdapter(empDataList);
+        LinearLayoutManager layoutManager_note = new LinearLayoutManager(
+                Acceuil.this,LinearLayoutManager.HORIZONTAL,false
+        );
+        recyclerView_last.setLayoutManager(layoutManager_note);
+        recyclerView_last.setItemAnimator(new DefaultItemAnimator());
+        recyclerView_last.setAdapter(mainAdapter);
+    }
+
+
+    private void generateEmployeeList(List<Livre> empDataList) {
+       recyclerView = findViewById(R.id.recycler_view);
+
+
+        mainAdapter = new MainAdapter(empDataList);
+
+     LinearLayoutManager layoutManager = new LinearLayoutManager(
+                Acceuil.this,LinearLayoutManager.HORIZONTAL,false
+        );
+
+      recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        recyclerView.setAdapter(mainAdapter);
+
+
+    }
+
 
 
     public void flipperImages(int image){

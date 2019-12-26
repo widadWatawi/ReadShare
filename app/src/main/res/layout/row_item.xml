@@ -13,20 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:paddingStart="10dp"
-        android:paddingLeft="10dp"
-
-
-
-
-        >
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/slide" />
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:src="@drawable/img1" />
 
         <TextView
             android:id="@+id/text_view"
@@ -36,4 +29,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+
+
 </RelativeLayout>
