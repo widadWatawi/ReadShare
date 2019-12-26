@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnSignin = findViewById(R.id.btnSignin);
 
-        SugarContext.init(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    class HttpReqTask extends AsyncTask<Void,Void, ResponseAuth> {
+    public class HttpReqTask extends AsyncTask<Void,Void, ResponseAuth> {
 
 
 
