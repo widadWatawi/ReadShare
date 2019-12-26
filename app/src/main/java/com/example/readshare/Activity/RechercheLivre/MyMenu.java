@@ -1,11 +1,14 @@
 package com.example.readshare.Activity.RechercheLivre;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,8 +24,12 @@ import com.example.readshare.Activity.Biblio;
 import com.example.readshare.Activity.DemandeLivre.DemanderLivre;
 import com.example.readshare.Activity.Message;
 import com.example.readshare.Activity.Profile;
+import com.example.readshare.Model.NoteId;
 import com.example.readshare.R;
 import com.google.android.material.navigation.NavigationView;
+import com.orm.SugarContext;
+
+import java.util.List;
 
 
 public class MyMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,6 +56,10 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
         search = findViewById(R.id.search_btn);
         contentFrameLayout = findViewById(R.id.fragment_container);
 
+        SharedPreferences prefs = getSharedPreferences("UserFile",Context.MODE_PRIVATE);
+        long id = prefs.getLong("idUser",0);
+        //Toast toast = Toast.makeText(getApplicationContext(), "the user id :"+id, Toast.LENGTH_SHORT);
+        //toast.show();
 
         search.setOnClickListener(new View.OnClickListener()
         {
