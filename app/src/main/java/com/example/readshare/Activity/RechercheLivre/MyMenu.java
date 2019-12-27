@@ -16,7 +16,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 
 import com.example.readshare.Activity.Acceuil;
-import com.example.readshare.Activity.Biblio;
 
 import com.example.readshare.Activity.DemandeLivre.DemanderLivre;
 import com.example.readshare.Activity.Message;
@@ -39,7 +38,7 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
         setContentView(R.layout.activity_home);
 
 
-        setTitle("Menu");
+        //setTitle("Menu");
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -137,4 +136,4 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
         super.onStop();
     }
 
-}
+    }

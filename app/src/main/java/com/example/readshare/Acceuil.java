@@ -1,7 +1,10 @@
 package com.example.readshare;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -10,9 +13,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readshare.Activity.RechercheLivre.MyMenu;
+
 import java.util.ArrayList;
 
-public class Acceuil extends AppCompatActivity {
+public class Acceuil extends MyMenu {
 
 
     ViewFlipper V_flipper;
@@ -24,7 +29,10 @@ public class Acceuil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acceuil);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.acceuil, null, false);
+        drawer.addView(contentView, 0);
         int images[] ={R.drawable.slide, R.drawable.slide2};
         V_flipper =  findViewById(R.id.V_flipper);
         recyclerView= findViewById(R.id.recycler_view);
