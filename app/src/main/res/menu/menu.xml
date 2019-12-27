@@ -35,12 +35,12 @@
 
         <item
             android:id="@+id/nav_message"
-            android:title="Message "
+            android:title="My requests"
             android:icon="@drawable/ic_message"
             />
         <item
             android:id="@+id/nav_request"
-            android:title="Requests"
+            android:title="Request Book"
             android:icon="@drawable/ic_request"
             />
         <item

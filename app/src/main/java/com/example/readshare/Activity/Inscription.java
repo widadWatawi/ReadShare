@@ -1,9 +1,11 @@
 package com.example.readshare.Activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +45,7 @@ public class Inscription extends AppCompatActivity {
             public void onClick(View v){
                 new HttpReqTask().execute();
             }
+            
         });
 
 
@@ -59,7 +62,7 @@ public class Inscription extends AppCompatActivity {
             try{
 
                 if(Password.getText().toString().equals(Password2.getText().toString())){
-                    String apiUrl = "http://192.168.0.165:8081/rest/registration/{login}/{firstname}/{lastname}/{email}/{password}";
+                    String apiUrl = "http://192.168.137.193:8081/rest/registration/{login}/{firstname}/{lastname}/{email}/{password}";
                     RestTemplate rt = new RestTemplate();
                     rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                     Map<String, Object> params = new HashMap<>();

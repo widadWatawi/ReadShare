@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,27 +24,67 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.readshare.Activity.AjouterLivre;
 import com.example.readshare.Activity.Library;
 import com.example.readshare.Activity.ModifierLivre;
+import com.example.readshare.Model.Historique;
+import com.example.readshare.Model.Livre;
+import com.example.readshare.Network.HistoriqueService;
+import com.example.readshare.Network.LivreService;
+import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class  FragmentLibrary extends Fragment {
+
+    GridView gridView;
+    LibraryAdapter livreAdapter;
+    View v;
     public FragmentLibrary(){
 
     }
-    GridView gridView;
-    String[] values={"Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7","Person 8", "Person 9", "Person 10", "Person 11", "Person 12", "Person 13", "Person 14"};
-    int[] images = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6, R.drawable.img7,R.drawable.img3, R.drawable.img4, R.drawable.img1, R.drawable.img5, R.drawable.img6, R.drawable.img7, R.drawable.img5};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.biblio, container, false);
+        v = inflater.inflate(R.layout.biblio, container, false);
         gridView=v.findViewById(R.id.gridview);
-        LibraryAdapter libraryAdapter=new LibraryAdapter(this.getActivity().getBaseContext(),values,images);
-        gridView.setAdapter(libraryAdapter);
+
+        LivreService service = RetrofitClient.getClient().create(LivreService.class);
+
+        /*Call the method with parameter in the interface to get the employee data*/
+        Call<List<Livre>> call = service.getLibrary();
+
+        /*Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+
+        call.enqueue(new Callback<List<Livre>>() {
+
+            @Override
+            public void onResponse(Call<List<Livre>> call, Response<List<Livre>> response) {
+                Log.d("widad","widad");
+                if (response.isSuccessful()) {
+
+                    List<Livre> library = response.body();
+                    generateDemandeList(library);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Livre>> call, Throwable t) {
+                // Toast.makeText(this.getActivity().getBaseContext(), "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
         FloatingActionButton btnajouter = v.findViewById(R.id.btnajouter);
 
         btnajouter.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +115,14 @@ public class  FragmentLibrary extends Fragment {
         return v;
 
     }
+
+    private void generateDemandeList(List<Livre> empDataList) {
+
+        livreAdapter = new LibraryAdapter(this.getActivity().getBaseContext(),empDataList);
+
+        gridView.setAdapter(livreAdapter);
+    }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

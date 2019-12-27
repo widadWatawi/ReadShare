@@ -3,7 +3,9 @@ package com.example.readshare.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,23 +17,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.readshare.Model.NoteId;
 import com.example.readshare.R;
 import com.example.readshare.Activity.RechercheLivre.MyMenu;
 import com.example.readshare.ResponseAuth;
+import com.orm.SugarContext;
 
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
 
     EditText UsernameEt, PasswordEt;
-
     Button btnLogin , btnSignin;
 
+    long id;
 
 
     @Override
@@ -42,10 +47,13 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnSignin = findViewById(R.id.btnSignin);
 
+
         btnLogin.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
                 new HttpReqTask().execute();
+
+
             }
         });
 
@@ -60,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    class HttpReqTask extends AsyncTask<Void,Void, ResponseAuth> {
+    public class HttpReqTask extends AsyncTask<Void,Void, ResponseAuth> {
 
 
 
@@ -100,15 +108,19 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     int duration = Toast.LENGTH_SHORT;
+                    id=ro.getUserId();
+                    SharedPreferences prefs = getSharedPreferences("UserFile",Context.MODE_PRIVATE);
+                    prefs.edit().putLong("idUser",id).commit();
 
                     Toast toast = Toast.makeText(getApplicationContext(), ro.getMessage(), duration);
                     toast.show();
-                    Intent intent = new Intent(getApplicationContext(), MyMenu.class);
 
+
+                    Intent intent = new Intent(getApplicationContext(), MyMenu.class);
                     startActivity(intent);
                 }
             }catch (Exception e){
-                Log.i("",e.getMessage());
+                Log.i("#####################",e.getMessage());
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(getApplicationContext(), "fail to authenticate", duration);
                 toast.show();
@@ -165,13 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
 
-            /*
-            for(com.example.readshare.User u : users){
 
-                Log.i("com.example.readshare.User : ","######################");
-                Log.i("User_id : ",String.valueOf(u.getId()));
-                Log.i("User_name : ",String.valueOf(u.getName()));
-                Log.i("User_lastname : ",String.valueOf(u.getLastName()));
 
 
             }

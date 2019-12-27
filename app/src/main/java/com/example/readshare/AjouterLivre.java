@@ -59,7 +59,7 @@ public class AjouterLivre extends MyMenu {
             description =findViewById(R.id.description);
             try{
 
-                String apiUrl = "http://192.168.1.94:8082/api/livres/{titre}/{auteur}/{genre}/{description}";
+                String apiUrl = "http://192.168.0.165:8081/api/addBook/{titre}/{auteur}/{genre}/{date}/{description}/{note}/{photo}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();
@@ -67,7 +67,10 @@ public class AjouterLivre extends MyMenu {
                 params.put("titre", titre.getText().toString());
                 params.put("auteur", auteur.getText().toString());
                 params.put("genre", genre.getText().toString());
+                params.put("date", "3-13-1996");
+                params.put("note", 5);
                 params.put("description", description.getText().toString());
+                params.put("photo", " ");
 
                 ResponseAuth ro = rt.getForObject(apiUrl,ResponseAuth.class,params);
                 return ro;
@@ -76,21 +79,13 @@ public class AjouterLivre extends MyMenu {
             }
             return null;
         }
-        protected void onPostExecute(ResponseRegist rr){
-            super.onPostExecute(rr);
+        protected void onPostExecute(ResponseAuth ro){
+            super.onPostExecute(ro);
             int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
+            Toast toast = Toast.makeText(getApplicationContext(), ro.getMessage(), duration);
             toast.show();
 
-            if(!rr.getSuccess()){
 
-                toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
-                toast.show();
-            }
-            else {
-
-
-            }
 
 
 

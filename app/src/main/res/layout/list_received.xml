@@ -12,10 +12,10 @@
         android:layout_width="60dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/border_img_cercle"/>
+        android:background="@drawable/img1"/>
 
     <TextView
-        android:id="@+id/username"
+        android:id="@+id/titre"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_toEndOf="@id/imageView"
@@ -27,12 +27,12 @@
         android:textColor="#333"
         android:textSize="16sp"/>
     <TextView
-        android:id="@+id/msg"
+        android:id="@+id/nom"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_toEndOf="@id/imageView"
         android:layout_toRightOf="@id/imageView"
-        android:layout_below="@id/username"
+        android:layout_below="@id/titre"
         android:layout_marginLeft="10dp"
         android:textColor="#333"
         android:textSize="16sp"/>

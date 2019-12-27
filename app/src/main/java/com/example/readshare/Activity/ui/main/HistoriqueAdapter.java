@@ -10,23 +10,25 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readshare.Model.Demande;
+import com.example.readshare.Model.Historique;
 import com.example.readshare.R;
+
+import java.util.List;
 
 public class HistoriqueAdapter extends BaseAdapter {
     Context context;
-    private final String[] values;
-    private  final int[] images;
+    private List<Historique> liste;
     View view;
 
-    public HistoriqueAdapter(Context context, String[] values,int[] images) {
+    public HistoriqueAdapter(Context context,List<Historique> liste) {
         this.context=context;
-        this.values=values;
-        this.images=images;
+        this.liste = liste;
     }
 
     @Override
     public int getCount() {
-        return values.length;
+        return liste.size();
     }
 
     @Override
@@ -46,9 +48,9 @@ public class HistoriqueAdapter extends BaseAdapter {
             view=new View(context);
             view=layoutInflater.inflate(R.layout.list_historique,null);
             ImageView imageView=view.findViewById(R.id.livrelu);
-            TextView textView=view.findViewById(R.id.titleBook);
-            imageView.setImageResource(images[position]);
-            textView.setText(values[position]);
+            TextView textView=view.findViewById(R.id.titre);
+            //imageView.setImageResource(images[position]);
+            textView.setText(liste.get(position).getLivre().getTitre());
         }
         return view;
     }
