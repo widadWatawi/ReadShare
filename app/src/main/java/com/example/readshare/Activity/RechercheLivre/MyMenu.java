@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,14 +20,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.readshare.Activity.Acceuil;
 
 import com.example.readshare.Activity.DemandeLivre.DemanderLivre;
-import com.example.readshare.Activity.Library;
 import com.example.readshare.Activity.Message;
 import com.example.readshare.Activity.Profile;
-import com.example.readshare.Model.NoteId;
+import com.example.readshare.Activity.bibliotheque;
 import com.example.readshare.R;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.List;
 
 
 public class MyMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -114,7 +110,7 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(intent);
                 break;
             case R.id.nav_library:
-                intent=new Intent(getApplicationContext(), Library.class);
+                intent=new Intent(getApplicationContext(), bibliotheque.class);
                 startActivity(intent);
                 break;
             case R.id.nav_message:
