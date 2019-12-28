@@ -2,9 +2,11 @@ package com.example.readshare.Activity;
 
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.readshare.Activity.RechercheLivre.MyMenu;
 import com.example.readshare.R;
 import com.example.readshare.ResponseAuth;
 
@@ -21,7 +24,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ModifierLivre extends AppCompatActivity {
+public class ModifierLivre extends MyMenu {
 
 
     EditText titre, auteur,description,genre;
@@ -32,7 +35,10 @@ public class ModifierLivre extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.modifier_livre);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.modifier_livre, null, false);
+        drawer.addView(contentView, 0);
 
         btnedit = findViewById(R.id.btnedit);
 

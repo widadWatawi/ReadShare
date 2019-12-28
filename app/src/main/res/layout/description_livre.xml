@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
@@ -47,7 +49,7 @@
         >
         <TextView
             android:id="@+id/titre_t"
-            android:text="Titre : "
+            android:text="@string/titre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -70,7 +72,7 @@
         >
         <TextView
             android:id="@+id/auteur_t"
-            android:text="Auteur : "
+            android:text="@string/auteur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -93,7 +95,7 @@
         >
         <TextView
             android:id="@+id/genre_t"
-            android:text="Genre : "
+            android:text="@string/genre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -118,7 +120,7 @@
         >
         <TextView
             android:id="@+id/date_t"
-            android:text="Date: "
+            android:text="@string/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -177,7 +179,7 @@
         >
         <TextView
             android:id="@+id/description_t"
-            android:text="Description : "
+            android:text="@string/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -201,7 +203,7 @@
             android:id="@+id/contact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contact"
+            android:text="@string/contact"
             android:layout_weight="1"
             />
 
@@ -210,7 +212,7 @@
             android:id="@+id/profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="@string/profile"
             android:layout_weight="1"
             />
 
@@ -219,7 +221,7 @@
             android:id="@+id/send_request"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send Request"
+            android:text="@string/send_request"
             android:layout_weight="1"
             />
 

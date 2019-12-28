@@ -12,16 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".descriptionMyBook">
+
+        <activity
+            android:name=".Activity.bibliotheque"
+            android:label="@string/title_activity_bibliotheque"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activity.Library"
-            android:label="@string/title_activity_library"
+        <activity android:name=".descriptionMyBook"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Activity.Message"
@@ -29,48 +31,35 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.RechercheLivre.RechercheLivre2" />
         <activity android:name=".Activity.Inscription" />
-        <activity android:name=".Acceuil"></activity>
-
-        <activity android:name=".Activity.MainActivity">
-
-        </activity>
+        <activity android:name=".AjouterLivre"></activity>
+        <activity android:name=".Activity.MainActivity"></activity>
         <activity android:name=".Activity.Acceuil"></activity>
-        <activity android:name=".Activity.DemandeLivre.DemanderLivre"></activity>
-        <activity android:name=".Activity.AjouterLivre" >
 
-        </activity>
+        <activity android:name=".Activity.DemandeLivre.DemanderLivre"></activity>
+
+        <activity android:name=".Activity.AjouterLivre"
+        android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Activity.Authentification" />
-        <activity android:name=".Activity.Biblio" />
         <activity android:name=".Activity.BiblioEchange" />
-        <activity android:name=".Activity.DescriptionLivre">
+
+        <activity android:name=".Activity.DescriptionLivre"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activity.ModifierLivre"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activity.ModifierProfile" />
+        <activity android:name=".Activity.Profile"
+            android:theme="@style/AppTheme.NoActionBar">
+>>>>>>> 13bcaee404fc5eabff3689c3d65446a200cac4d4
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.Historique"></activity>
-        <activity android:name=".Activity.ModifierProfile"></activity>
-        <activity android:name=".Activity.ModifierLivre"></activity>
-        <activity android:name=".Activity.Profile"></activity>
-        <activity android:name=".Activity.TracabiliteLivre" />
         <activity android:name=".Activity.RechercheLivre.RechercheLivre" />
         <activity
             android:name=".Activity.RechercheLivre.MyMenu"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <meta-data
-            android:name="DATABASE"
-            android:value="notes.db" />
-        <meta-data
-            android:name="VERSION"
-            android:value="1" />
-        <meta-data
-            android:name="QUERY_LOG"
-            android:value="true" />
-        <meta-data
-            android:name="DOMAIN_PACKAGE_NAME"
-            android:value="com.grafixartist.noteapp" />
     </application>
 
 </manifest>

@@ -44,7 +44,7 @@ public static class ViewHolder extends RecyclerView.ViewHolder {
     public TextView distuser;
     public ViewHolder(View itemView) {
         super(itemView);
-        this.imageuser = (ImageView) itemView.findViewById(R.id.imageuser);
+       this.imageuser = (ImageView) itemView.findViewById(R.id.imageuser);
         this.distuser = (TextView) itemView.findViewById(R.id.distanceUser);
 
     }

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView android:layout_height="match_parent"
-    android:background="#eb2352" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#eb2352"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
         android:paddingTop="16dp"
         android:paddingRight="16dp"
         >
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:gravity="center"
             android:id="@+id/imageView1"
@@ -44,7 +48,7 @@
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:hint="Login"
+                    android:hint="@string/login"
                     android:layout_marginBottom="10dp"
                     android:inputType="text"
                     android:maxLines="1"
@@ -64,7 +68,7 @@
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:hint="Nom"
+                    android:hint="@string/lastName"
                     android:inputType="text"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
@@ -84,7 +88,7 @@
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:hint="Prenom"
+                    android:hint="@string/firstName"
                     android:inputType="text"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
@@ -104,7 +108,7 @@
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:hint="Email"
+                    android:hint="@string/email"
                     android:inputType="text"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
@@ -124,7 +128,7 @@
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:hint="Ville"
+                    android:hint="@string/city"
                     android:inputType="text"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
@@ -144,7 +148,7 @@
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:hint="Tel"
+                    android:hint="@string/tel"
                     android:inputType="text"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"

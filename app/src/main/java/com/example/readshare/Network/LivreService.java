@@ -9,8 +9,14 @@ import retrofit2.http.GET;
 
 public interface LivreService {
 
-    @GET("livres/")
+    @GET("api/livres")
     Call<List<Livre>> getLivres();
+
+    @GET("api/best")
+    Call<List<Livre>> getBest();
+
+    @GET("api/last")
+    Call<List<Livre>> getLast();
 
     @GET("api/library/1")
     Call<List<Livre>> getLibrary();

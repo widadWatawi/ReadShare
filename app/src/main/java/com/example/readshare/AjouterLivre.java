@@ -2,9 +2,11 @@ package com.example.readshare;
 
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,13 +14,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.readshare.Activity.RechercheLivre.MyMenu;
+
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AjouterLivre extends AppCompatActivity {
+public class AjouterLivre extends MyMenu {
 
 
     EditText titre, auteur,description,genre;
@@ -29,7 +33,10 @@ public class AjouterLivre extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ajouter_livre);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.ajouter_livre, null, false);
+        drawer.addView(contentView, 0);
 
         btnadd = findViewById(R.id.btnadd);
 

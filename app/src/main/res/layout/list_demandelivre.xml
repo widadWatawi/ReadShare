@@ -73,7 +73,7 @@
         android:layout_below="@+id/distance"
         android:layout_toRightOf="@+id/imageView"
         android:background="@drawable/btn_rounded"
-        android:hint="Request"
+        android:hint="@string/request"
         android:layout_gravity="right"
         android:textColor="#ffffff"
         android:textSize="16dp"

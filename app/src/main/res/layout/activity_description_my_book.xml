@@ -58,7 +58,7 @@
                 >
                 <TextView
                     android:id="@+id/titre_t"
-                    android:text="Titre : "
+                    android:text="@string/titre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -81,7 +81,7 @@
                 >
                 <TextView
                     android:id="@+id/auteur_t"
-                    android:text="Auteur : "
+                    android:text="@string/auteur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -104,7 +104,7 @@
                 >
                 <TextView
                     android:id="@+id/genre_t"
-                    android:text="Genre : "
+                    android:text="@string/genre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -129,7 +129,7 @@
                 >
                 <TextView
                     android:id="@+id/date_t"
-                    android:text="Date: "
+                    android:text="@string/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -188,7 +188,7 @@
         >
         <TextView
             android:id="@+id/description_t"
-            android:text="Description : "
+            android:text="@string/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -212,7 +212,7 @@
             android:id="@+id/Modify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modify"
+            android:text="@string/modify"
             android:layout_weight="1"
             />
 
@@ -221,7 +221,7 @@
             android:id="@+id/Delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
+            android:text="@string/delete"
             android:layout_weight="1"
             />
 

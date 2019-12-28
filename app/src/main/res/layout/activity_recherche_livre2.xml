@@ -22,7 +22,7 @@
                 android:id="@+id/cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="CANCEL"/>
+                android:text="@string/cancel"/>
         </LinearLayout>
 
         <TableLayout
@@ -47,7 +47,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="romance"
+                        android:text="@string/romance"
                         android:layout_gravity="center"
                         />
 
@@ -68,7 +68,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="comedy"
+                        android:text="@string/comedy"
                         android:layout_gravity="center"
                         />
 
@@ -90,7 +90,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="fantasy"
+                        android:text="@string/fantasy"
                         android:layout_gravity="center"
                         />
 
@@ -112,7 +112,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="slice of life"
+                        android:text="@string/slice_of_life"
                         android:layout_gravity="center"
                         />
 
@@ -139,7 +139,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="history"
+                        android:text="@string/history"
                         android:layout_gravity="center"
                         />
 
@@ -160,7 +160,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="horror"
+                        android:text="@string/horror"
                         android:layout_gravity="center"
                         />
 
@@ -181,7 +181,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="sport"
+                        android:text="@string/sport"
                         android:layout_gravity="center"
                         />
 
@@ -202,7 +202,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="sci-fi"
+                        android:text="@string/sci_fi"
                         android:layout_gravity="center"
                         />
 
@@ -229,7 +229,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="heart-warming"
+                    android:text="@string/heart_warming"
                     android:layout_gravity="center"
                     />
 
@@ -250,7 +250,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="super hero"
+                    android:text="@string/super_hero"
                     android:layout_gravity="center"
                     />
 
@@ -271,7 +271,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="drama"
+                        android:text="@string/drama"
                         android:layout_gravity="center"
                         />
 
@@ -292,7 +292,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="action"
+                        android:text="@string/action"
                         android:layout_gravity="center"
                         />
 
@@ -320,7 +320,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="thriller"
+                        android:text="@string/thriller"
                         android:layout_gravity="center"
                         />
 
@@ -341,7 +341,7 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="crime"
+                    android:text="@string/crime"
                     android:layout_gravity="center"
                     />
 
@@ -362,7 +362,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="informative"
+                        android:text="@string/informative"
                         android:layout_gravity="center"
                         />
 
