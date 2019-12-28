@@ -61,12 +61,12 @@ public class AjouterLivre extends AppCompatActivity {
             description =findViewById(R.id.description);
             try{
 
-                String apiUrl = "http://192.168.0.165:8081/api/addBook/{titre}/{auteur}/{genre}/{date}/{description}/{note}/{photo}";
+                String apiUrl = "http://192.168.0.165:8081/api/addBook/{titre}/{auteur}/{genre}/{date}/{description}/{note}/{photo}/{id_actual}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();
 
-                //id a recuperer
+
                 params.put("titre", titre.getText().toString());
                 params.put("auteur", auteur.getText().toString());
                 params.put("genre", genre.getText().toString());
@@ -74,6 +74,10 @@ public class AjouterLivre extends AppCompatActivity {
                 params.put("note", 5);
                 params.put("description", description.getText().toString());
                 params.put("photo", " ");
+
+                SharedPreferences prefs = getSharedPreferences("UserFile",Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                params.put("id_actual", id);
 
                 ResponseRegist rr = rt.getForObject(apiUrl,ResponseRegist.class,params);
                 return rr;
@@ -132,8 +136,11 @@ public class AjouterLivre extends AppCompatActivity {
         protected void onPostExecute(ResponseRegist rr){
             super.onPostExecute(rr);
             int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
-            toast.show();
+            if(!rr.getSuccess()){
+                Toast toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
+                toast.show();
+            }
+
 
 
 

@@ -13,7 +13,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".descriptionMyBook">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Activity.Library"
@@ -33,17 +37,17 @@
         <activity android:name=".Activity.Acceuil"></activity>
         <activity android:name=".Activity.DemandeLivre.DemanderLivre"></activity>
         <activity android:name=".Activity.AjouterLivre" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.Authentification" />
         <activity android:name=".Activity.Biblio" />
         <activity android:name=".Activity.BiblioEchange" />
         <activity android:name=".Activity.DescriptionLivre">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Activity.Historique"></activity>
         <activity android:name=".Activity.ModifierProfile"></activity>
