@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.readshare.Activity.RechercheLivre.MyMenu;
 import com.example.readshare.R;
 import com.example.readshare.ResponseAuth;
 import com.example.readshare.ResponseRegist;
@@ -25,7 +27,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AjouterLivre extends AppCompatActivity {
+public class AjouterLivre extends MyMenu {
 
     EditText titre, auteur,description,genre;
     Button addBook;
@@ -34,7 +36,10 @@ public class AjouterLivre extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ajouter_livre);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.ajouter_livre, null, false);
+        drawer.addView(contentView, 0);
 
 
         addBook = findViewById(R.id.btnadd);
