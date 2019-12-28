@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recommendation"
+        android:text="@string/recommendation"
         android:layout_marginTop="5dp"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Mieux note"
+        android:text="@string/mieux_note"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Derniers livres"
+        android:text="@string/derniers_livres"
         android:textSize="20sp"
         android:textStyle="bold" />
 

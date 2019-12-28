@@ -8,9 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.readshare.Model.Demande;
 import com.example.readshare.Model.Historique;
 import com.example.readshare.R;
 

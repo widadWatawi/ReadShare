@@ -7,14 +7,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
+        android:gravity="center">
 
-        >
-
-        <ImageView
-            android:id="@+id/imageView"
+        <LinearLayout
+            android:id="@+id/imageClick"
             android:layout_width="110dp"
             android:layout_height="150dp"
+            android:orientation="horizontal"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:scaleType="fitXY"
@@ -22,9 +21,21 @@
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_alignParentLeft="true"
-            android:background="@drawable/img1"
-            android:layout_alignParentRight="true"
-            />
+            android:weightSum="10"
+            android:background="@drawable/img1">
+
+            <include
+                layout="@layout/icon_bottom"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"/>
+        </LinearLayout>
+
+
+
+
+
 
 
 
@@ -47,7 +58,7 @@
                 >
                 <TextView
                     android:id="@+id/titre_t"
-                    android:text="Titre : "
+                    android:text="@string/titre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -70,7 +81,7 @@
                 >
                 <TextView
                     android:id="@+id/auteur_t"
-                    android:text="Auteur : "
+                    android:text="@string/auteur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -93,7 +104,7 @@
                 >
                 <TextView
                     android:id="@+id/genre_t"
-                    android:text="Genre : "
+                    android:text="@string/genre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -118,7 +129,7 @@
                 >
                 <TextView
                     android:id="@+id/date_t"
-                    android:text="Date: "
+                    android:text="@string/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -177,7 +188,7 @@
         >
         <TextView
             android:id="@+id/description_t"
-            android:text="Description : "
+            android:text="@string/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -201,7 +212,7 @@
             android:id="@+id/Modify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modify"
+            android:text="@string/modify"
             android:layout_weight="1"
             />
 
@@ -210,7 +221,7 @@
             android:id="@+id/Delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
+            android:text="@string/delete"
             android:layout_weight="1"
             />
 

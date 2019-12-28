@@ -1,5 +1,10 @@
 package com.example.readshare.Activity;
 
+
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -25,7 +30,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Profile extends AppCompatActivity {
+public class Profile extends MyMenu {
 
 
     @BindView(R.id.login)
@@ -50,7 +55,10 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.profile, null, false);
+        drawer.addView(contentView, 0);
         ButterKnife.bind(this);
 
         editBtn.setOnClickListener(new View.OnClickListener(){

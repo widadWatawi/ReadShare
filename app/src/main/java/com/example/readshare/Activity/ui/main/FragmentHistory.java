@@ -1,25 +1,16 @@
 package com.example.readshare.Activity.ui.main;
 
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.ListAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.readshare.Activity.main.ReceivedAdapter;
-import com.example.readshare.Model.Demande;
 import com.example.readshare.Model.Historique;
-import com.example.readshare.Network.DemandeService;
 import com.example.readshare.Network.HistoriqueService;
 import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.R;
@@ -91,5 +82,6 @@ public class FragmentHistory extends Fragment {
     }
 
 
-}
 
+
+}

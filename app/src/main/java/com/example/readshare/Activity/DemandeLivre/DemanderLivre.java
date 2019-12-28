@@ -1,9 +1,15 @@
 package com.example.readshare.Activity.DemandeLivre;
 
+
 import android.app.Activity;
 import android.content.Intent;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -11,7 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.example.readshare.Activity.DescriptionLivre;
+
+import com.example.readshare.Activity.RechercheLivre.MyMenu;
+
 import com.example.readshare.Model.Livre;
 import com.example.readshare.Network.LivreService;
 import com.example.readshare.Network.RetrofitClient;
@@ -24,7 +34,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class DemanderLivre extends AppCompatActivity {
+public class DemanderLivre extends MyMenu {
 
 
     RecyclerView recyclerView;
@@ -33,6 +43,10 @@ public class DemanderLivre extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.demander_livre, null, false);
+        drawer.addView(contentView, 0);
         setContentView(R.layout.demander_livre);
         /*Create handle for the RetrofitInstance interface*/
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
