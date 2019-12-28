@@ -1,5 +1,6 @@
 package com.example.readshare.Activity.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,8 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.readshare.Activity.DemandeLivre.DemanderLivre;
 import com.example.readshare.Activity.DemandeLivre.demandeLivreAdapter;
+import com.example.readshare.Activity.DescriptionLivre;
+import com.example.readshare.Activity.LivrePropose.DemanderLivre;
 import com.example.readshare.Model.Demande;
 import com.example.readshare.Model.Employee;
 import com.example.readshare.Model.Livre;
@@ -83,7 +85,16 @@ public class FragmentReceived extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
 
 
-        adapter = new ReceivedAdapter(empDataList);
+
+                adapter = new ReceivedAdapter(empDataList, new ReceivedAdapter.OnItemClickListenerRequest() {
+                    @Override
+                    public void onItemClick(Demande demande) {
+                        Intent intent = new Intent(v.getContext(), DemanderLivre.class);
+                        intent.putExtra("id_sender", demande.getUser_sender().getId() + "");
+                        startActivity(intent);
+                    }
+                });
+
 
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getActivity().getBaseContext());

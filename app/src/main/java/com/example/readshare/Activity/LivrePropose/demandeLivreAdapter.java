@@ -1,22 +1,16 @@
-package com.example.readshare.Activity.DemandeLivre;
+package com.example.readshare.Activity.LivrePropose;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.readshare.Model.Livre;
 import com.example.readshare.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class demandeLivreAdapter extends RecyclerView.Adapter<demandeLivreAdapter.ViewHolder>{
@@ -74,7 +68,7 @@ public demandeLivreAdapter(List<Livre> listdata, OnItemClickListener listener) {
 @Override
 public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.list_demandelivre, parent, false);
+        View listItem= layoutInflater.inflate(R.layout.list_proposerlivre, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
         }

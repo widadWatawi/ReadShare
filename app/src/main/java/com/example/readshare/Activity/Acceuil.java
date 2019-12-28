@@ -1,5 +1,6 @@
 package com.example.readshare.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -127,7 +128,15 @@ public class Acceuil extends AppCompatActivity {
     private void generateEmployeeList_note(List<Livre> empDataList) {
 
         recyclerView_note = findViewById(R.id.recycler_note);
-       mainAdapter = new MainAdapter(empDataList);
+        mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Livre livre){
+                Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                intent.putExtra("livreId", livre.getId()+"");
+
+                startActivity(intent);
+            }
+        });
         LinearLayoutManager layoutManager_note = new LinearLayoutManager(
                 Acceuil.this,LinearLayoutManager.HORIZONTAL,false
         );
@@ -139,7 +148,14 @@ public class Acceuil extends AppCompatActivity {
     private void generateEmployeeList_last(List<Livre> empDataList) {
 
         recyclerView_last = findViewById(R.id.recycler_last);
-        mainAdapter = new MainAdapter(empDataList);
+         mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Livre livre){
+                Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                intent.putExtra("livreId", livre.getId()+"");
+                startActivity(intent);
+            }
+        });
         LinearLayoutManager layoutManager_note = new LinearLayoutManager(
                 Acceuil.this,LinearLayoutManager.HORIZONTAL,false
         );
@@ -150,10 +166,17 @@ public class Acceuil extends AppCompatActivity {
 
 
     private void generateEmployeeList(List<Livre> empDataList) {
+
        recyclerView = findViewById(R.id.recycler_view);
-
-
-        mainAdapter = new MainAdapter(empDataList);
+        mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
+            @Override
+                public void onItemClick(Livre livre){
+                Log.d("id","baba");
+                Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                intent.putExtra("livreId", livre.getId()+"");
+                startActivity(intent);
+            }
+        });
 
      LinearLayoutManager layoutManager = new LinearLayoutManager(
                 Acceuil.this,LinearLayoutManager.HORIZONTAL,false

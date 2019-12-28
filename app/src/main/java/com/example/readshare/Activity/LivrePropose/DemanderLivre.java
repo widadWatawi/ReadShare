@@ -1,6 +1,5 @@
-package com.example.readshare.Activity.DemandeLivre;
+package com.example.readshare.Activity.LivrePropose;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,16 +28,20 @@ public class DemanderLivre extends AppCompatActivity {
 
     RecyclerView recyclerView;
     demandeLivreAdapter adapter;
-
+    Long id_sender;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.demander_livre);
+        setContentView(R.layout.proposer_livre);
         /*Create handle for the RetrofitInstance interface*/
+        Intent intent = getIntent();
+
+        id_sender = Long.parseLong(intent.getStringExtra("id_sender"));
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Livre>> call = service.getLivres();
+        Call<List<Livre>> call = service.getLibrary(id_sender);
+        id_sender = (long)0;
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

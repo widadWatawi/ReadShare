@@ -58,7 +58,7 @@ public class  FragmentLibrary extends Fragment {
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Livre>> call = service.getLibrary();
+        Call<List<Livre>> call = service.getLibrary((long)1);
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

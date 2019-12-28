@@ -21,11 +21,22 @@
 
             android:theme="@style/AppTheme.NoActionBar">
 
+
         </activity>
         <activity
             android:name=".Activity.Message"
             android:label="@string/title_activity_message"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
         <activity android:name=".Activity.RechercheLivre.RechercheLivre2"></activity>
         <activity android:name=".Activity.Inscription"></activity>
         <activity android:name=".AjouterLivre">
@@ -41,15 +52,20 @@
 
 
         <activity android:name=".Activity.Acceuil">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
         </activity>
-        <activity android:name=".Activity.DemandeLivre.DemanderLivre"></activity>
+        <activity android:name=".Activity.DemandeLivre.DemanderLivre">
+
+        </activity>
+
+        <activity android:name=".Activity.LivrePropose.DemanderLivre">
+
+
+
+        </activity>
+
+
         <activity android:name=".Activity.AjouterLivre" >
 
 
@@ -61,6 +77,7 @@
         <activity android:name=".Activity.Biblio"></activity>
         <activity android:name=".Activity.BiblioEchange"></activity>
         <activity android:name=".Activity.DescriptionLivre" >
+
         </activity>
 
         <activity android:name=".Activity.Historique" >
@@ -69,8 +86,11 @@
 
         <activity android:name=".Activity.ModifierProfile"></activity>
         <activity android:name=".Activity.ModifierLivre"></activity>
-        <activity android:name=".Activity.Profile"></activity>
-        <activity android:name=".Activity.TracabiliteLivre" />
+        <activity android:name=".Activity.Profile">
+
+        </activity>
+        <activity android:name=".Activity.TracabiliteLivre"/>
+
         <activity android:name=".Activity.RechercheLivre.RechercheLivre" />
         <activity
             android:name=".Activity.RechercheLivre.MyMenu"

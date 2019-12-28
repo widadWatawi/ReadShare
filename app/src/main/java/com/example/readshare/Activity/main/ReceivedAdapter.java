@@ -12,20 +12,63 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readshare.Activity.LivrePropose.demandeLivreAdapter;
 import com.example.readshare.Model.Demande;
 import com.example.readshare.Model.Employee;
 import com.example.readshare.Model.Livre;
+import com.example.readshare.OnItemClickListener;
+import com.example.readshare.OnItemClickListenerRequest;
 import com.example.readshare.R;
 
 import java.util.List;
 
 public class ReceivedAdapter  extends RecyclerView.Adapter<ReceivedAdapter.ViewHolder>{
     private List<Demande> lstReceived;
+    private OnItemClickListenerRequest listener;
 
     // RecyclerView recyclerView;
-    public ReceivedAdapter(List<Demande> lstReceived) {
+    public ReceivedAdapter(List<Demande> lstReceived, OnItemClickListenerRequest listener) {
         this.lstReceived =lstReceived ;
+        this.listener = listener;
     }
+
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView titre;
+        public TextView nom;
+        public RelativeLayout relativeLayout;
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            this.titre = (TextView) itemView.findViewById(R.id.titre);
+            this.nom = (TextView) itemView.findViewById(R.id.nom);
+            relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
+        }
+
+
+        public void bind(final Demande item, final OnItemClickListenerRequest listener) {
+
+
+            titre.setText(item.getLivre_received().getTitre());
+             nom.setText(item.getUser_sender().getNom()+ " "+item.getUser_sender().getPrenom());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+                    listener.onItemClick(item);
+
+                }
+
+            });
+
+        }
+
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
@@ -38,8 +81,7 @@ public class ReceivedAdapter  extends RecyclerView.Adapter<ReceivedAdapter.ViewH
     public void onBindViewHolder(ViewHolder holder, int position) {
         //final ListReceived myListreceived = lstReceived[position];
         //Log.d("hh",lstReceived.get(position).getLivre_received().getTitre());
-        holder.titre.setText(lstReceived.get(position).getLivre_received().getTitre());
-        holder.nom.setText(lstReceived.get(position).getUser_sender().getNom());
+        holder.bind(lstReceived.get(position), listener);
         /*holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,17 +96,14 @@ public class ReceivedAdapter  extends RecyclerView.Adapter<ReceivedAdapter.ViewH
         return lstReceived.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView titre;
-        public TextView nom;
-        public RelativeLayout relativeLayout;
-        public ViewHolder(View itemView) {
-            super(itemView);
-
-            this.titre = (TextView) itemView.findViewById(R.id.titre);
-            this.nom = (TextView) itemView.findViewById(R.id.nom);
-            relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
-        }
+    public Demande getItem(int position){
+        return lstReceived.get(position);
     }
+
+
+    public interface OnItemClickListenerRequest {
+        void onItemClick(Demande livre);
+    }
+
+
 }
