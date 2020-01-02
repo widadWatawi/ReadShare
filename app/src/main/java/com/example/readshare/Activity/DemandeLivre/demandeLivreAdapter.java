@@ -62,6 +62,7 @@ public demandeLivreAdapter(List<Livre> listdata, OnItemClickListener listener) {
 
                     listener.onItemClick(item);
 
+
                 }
 
             });

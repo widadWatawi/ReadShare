@@ -7,9 +7,10 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface HistoriqueService {
 
-    @GET("historique/1")
-    Call<List<Historique>> getHistorique();
+    @GET("historique/{id}")
+    Call<List<Historique>> getHistorique(@Path("id") Long id);
 }

@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 new HttpReqTask().execute();
 
 
+
             }
         });
 
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             PasswordEt = findViewById(R.id.etPassword);
             try{
 
-                String apiUrl = "http://192.168.0.165:8081/rest/login/{login}/{password}";
+                String apiUrl = "http://192.168.1.107:8081/rest/login/{login}/{password}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();
@@ -105,19 +106,22 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast toast = Toast.makeText(getApplicationContext(), ro.getMessage(), duration);
                     toast.show();
+
+
                 }
                 else {
                     int duration = Toast.LENGTH_SHORT;
                     id=ro.getUserId();
                     SharedPreferences prefs = getSharedPreferences("UserFile",Context.MODE_PRIVATE);
+                    Log.d("widad",id+"");
                     prefs.edit().putLong("idUser",id).commit();
 
                     Toast toast = Toast.makeText(getApplicationContext(), ro.getMessage(), duration);
                     toast.show();
 
-
-                    Intent intent = new Intent(getApplicationContext(), MyMenu.class);
+                    Intent intent = new Intent(getApplicationContext(), Acceuil.class);
                     startActivity(intent);
+
                 }
             }catch (Exception e){
                 Log.i("#####################",e.getMessage());

@@ -44,11 +44,12 @@ public class Inscription extends AppCompatActivity {
         btnSignin.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 new HttpReqTask().execute();
+                Intent intent = new Intent(getApplicationContext(), Acceuil.class);
+                startActivity(intent);
+
             }
             
         });
-
-
 
 
     }
@@ -62,7 +63,7 @@ public class Inscription extends AppCompatActivity {
             try{
 
                 if(Password.getText().toString().equals(Password2.getText().toString())){
-                    String apiUrl = "http://192.168.137.193:8081/rest/registration/{login}/{firstname}/{lastname}/{email}/{password}";
+                    String apiUrl = "http://192.168.1.107:8081/rest/registration/{login}/{firstname}/{lastname}/{email}/{password}";
                     RestTemplate rt = new RestTemplate();
                     rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                     Map<String, Object> params = new HashMap<>();

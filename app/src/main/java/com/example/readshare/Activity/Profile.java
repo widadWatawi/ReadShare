@@ -18,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.readshare.Activity.RechercheLivre.MyMenu;
+import com.example.readshare.Model.User;
 import com.example.readshare.R;
 import com.example.readshare.ResponseAuth;
 
@@ -51,6 +52,8 @@ public class Profile extends MyMenu {
     @BindView(R.id.edit_user)
     TextView editBtn;
 
+    User user;
+
     int id = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,12 @@ public class Profile extends MyMenu {
         View contentView = inflater.inflate(R.layout.profile, null, false);
         drawer.addView(contentView, 0);
         ButterKnife.bind(this);
+
+
+        Intent intent = getIntent();
+
+        user = (User)intent.getSerializableExtra("user");
+
 
         editBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -73,18 +82,16 @@ public class Profile extends MyMenu {
     }
 
 
-
-
     @Override
     protected void onResume() {
         super.onResume();
 
 
-        login.setText("Login");
-        first_name.setText("First Name");
-        last_name.setText("Last Name");
-        email.setText("Email");
-        city.setText("Ville");
+        login.setText(user.getLogin());
+        first_name.setText(user.getPrenom());
+        last_name.setText(user.getNom());
+        email.setText(user.getEmail());
+        city.setText(user.getVille());
 
 
     }

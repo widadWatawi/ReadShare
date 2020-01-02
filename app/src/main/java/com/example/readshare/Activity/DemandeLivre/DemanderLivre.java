@@ -34,11 +34,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
+
 public class DemanderLivre extends MyMenu {
 
 
     RecyclerView recyclerView;
     demandeLivreAdapter adapter;
+
+    String genre;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,8 +55,11 @@ public class DemanderLivre extends MyMenu {
         /*Create handle for the RetrofitInstance interface*/
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
 
-        /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Livre>> call = service.getLivres();
+
+       /*Intent intent = getIntent();
+        genre =intent.getStringExtra("genre");*/
+        Call<List<Livre>> call;
+        call = service.getLivres();
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

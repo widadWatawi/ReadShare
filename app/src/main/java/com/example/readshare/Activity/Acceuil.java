@@ -212,4 +212,12 @@ public class Acceuil extends MyMenu {
         V_flipper.setInAnimation(this,android.R.anim.slide_in_left);
         V_flipper.setOutAnimation(this,android.R.anim.slide_out_right);
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(Acceuil.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+
+    }
+
 }

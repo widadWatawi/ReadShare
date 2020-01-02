@@ -1,6 +1,8 @@
 package com.example.readshare.Activity.LivrePropose;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -36,12 +38,13 @@ public class DemanderLivre extends AppCompatActivity {
         /*Create handle for the RetrofitInstance interface*/
         Intent intent = getIntent();
 
-        id_sender = Long.parseLong(intent.getStringExtra("id_sender"));
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
 
+        SharedPreferences prefs = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+        long id = prefs.getLong("idUser",0);
+
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Livre>> call = service.getLibrary(id_sender);
-        id_sender = (long)0;
+        Call<List<Livre>> call = service.getLibrary(id);
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

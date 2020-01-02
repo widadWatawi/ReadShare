@@ -17,6 +17,9 @@ public interface LivreService {
     @GET("api/livres/{id}")
     Call<Livre> getLivre(@Path("id") Long id);
 
+    @GET("api/livres/genre/{genre}")
+    Call<List<Livre>> getLivreParGenre(@Path("genre") String genre);
+
     @GET("api/best")
     Call<List<Livre>> getBest();
 

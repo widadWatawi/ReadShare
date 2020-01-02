@@ -1,16 +1,23 @@
 package com.example.readshare.Activity.ui.main;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.readshare.Activity.DescriptionLivre;
 import com.example.readshare.Model.Historique;
+import com.example.readshare.Model.Livre;
 import com.example.readshare.Network.HistoriqueService;
 import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.R;
@@ -37,8 +44,11 @@ public class FragmentHistory extends Fragment {
 
         HistoriqueService service = RetrofitClient.getClient().create(HistoriqueService.class);
 
+        SharedPreferences prefs = this.getActivity().getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+        long id = prefs.getLong("idUser",0);
+
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Historique>> call = service.getHistorique();
+        Call<List<Historique>> call = service.getHistorique(id);
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");
@@ -73,7 +83,18 @@ public class FragmentHistory extends Fragment {
 
         historiqueAdapter = new HistoriqueAdapter(this.getActivity().getBaseContext(),empDataList);
 
+
         gridView.setAdapter(historiqueAdapter);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Historique historique =empDataList.get(position);
+                Intent intent = new Intent(v.getContext(), DescriptionLivre.class);
+                intent.putExtra("livreId", historique.getLivre().getId()+"");
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

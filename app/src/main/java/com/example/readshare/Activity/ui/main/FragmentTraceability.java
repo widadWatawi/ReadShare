@@ -22,6 +22,8 @@ public class FragmentTraceability extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.tracabilite_livre,container,false);
+
+
         ListTracabilite[] listTracabilites= new ListTracabilite[] {
                 new ListTracabilite(R.drawable.img1,"150m"),
                 new ListTracabilite(R.drawable.img2,"350m"),

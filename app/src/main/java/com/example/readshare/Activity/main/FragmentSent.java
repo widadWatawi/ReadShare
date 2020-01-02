@@ -1,5 +1,7 @@
 package com.example.readshare.Activity.main;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,8 +45,11 @@ public class FragmentSent extends Fragment {
         /*Create handle for the RetrofitInstance interface*/
         DemandeService service = RetrofitClient.getClient().create(DemandeService.class);
 
+        SharedPreferences prefs = this.getActivity().getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+        long id = prefs.getLong("idUser",0);
+
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Demande>> call = service.getDemandesEnvoyes();
+        Call<List<Demande>> call = service.getDemandesEnvoyes(id);
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

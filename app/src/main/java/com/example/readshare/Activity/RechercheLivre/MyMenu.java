@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,11 +22,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.readshare.Activity.Acceuil;
 
 import com.example.readshare.Activity.DemandeLivre.DemanderLivre;
+import com.example.readshare.Activity.DescriptionLivre;
 import com.example.readshare.Activity.Message;
 import com.example.readshare.Activity.Profile;
 import com.example.readshare.Activity.bibliotheque;
+import com.example.readshare.Model.Livre;
+import com.example.readshare.Model.User;
+import com.example.readshare.Network.LivreService;
+import com.example.readshare.Network.RetrofitClient;
+import com.example.readshare.Network.UserService;
 import com.example.readshare.R;
 import com.google.android.material.navigation.NavigationView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MyMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,6 +46,8 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
     public Button search;
     public FrameLayout contentFrameLayout;
     public Toolbar toolbar;
+
+    public User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +67,34 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
 
         SharedPreferences prefs = getSharedPreferences("UserFile",Context.MODE_PRIVATE);
         long id = prefs.getLong("idUser",0);
+
+
+        UserService service = RetrofitClient.getClient().create(UserService.class);
+
+        /*Call the method with parameter in the interface to get the employee data*/
+        Call<User> call = service.getUser(id);
+
+        /*Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<User>() {
+
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    user= response.body();
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(MyMenu.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         //Toast toast = Toast.makeText(getApplicationContext(), "the user id :"+id, Toast.LENGTH_SHORT);
         //toast.show();
 
@@ -86,16 +128,7 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
 
 
 
-    @Override
-    public void onBackPressed() {
-        if(drawer.isDrawerOpen(GravityCompat.START)){
-            drawer.closeDrawer(GravityCompat.START);
-        }
-        else{
-            super.onBackPressed();
-        }
 
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -107,6 +140,7 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
                 break;
             case R.id.nav_profile:
                 intent=new Intent(getApplicationContext(), Profile.class);
+                intent.putExtra("user", user);
                 startActivity(intent);
                 break;
             case R.id.nav_library:
@@ -137,10 +171,6 @@ public class MyMenu extends AppCompatActivity implements NavigationView.OnNaviga
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
     }
-    @Override
-    protected void onStop() {
-        finish();
-        super.onStop();
-    }
+
 
     }

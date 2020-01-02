@@ -3,9 +3,10 @@ package com.example.readshare.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User  implements Serializable {
 
     @SerializedName("id")
     @Expose
@@ -31,6 +32,10 @@ public class User {
     @Expose
     private String password;
 
+    @SerializedName("ville")
+    @Expose
+    private String ville;
+
     public Long getId() {
         return id;
     }
@@ -41,6 +46,14 @@ public class User {
 
     public String getNom() {
         return nom;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
     public void setNom(String nom) {

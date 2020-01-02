@@ -73,6 +73,8 @@ public class DescriptionLivre  extends MyMenu {
     @BindView(R.id.send_request)
     Button sendRequest;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,6 +122,7 @@ public class DescriptionLivre  extends MyMenu {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(),Profile.class);
+                intent.putExtra("user", livre.getUser_actuel());
                 startActivity(intent);
             }
         });
