@@ -29,6 +29,7 @@ public demandeLivreAdapter(List<User> listdata) {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         //  public ImageView imageView;
         public TextView nom;
+        public TextView distance;
         //public TextView distance;
         //public Button request;
         public LinearLayout linearLayout;
@@ -37,6 +38,7 @@ public demandeLivreAdapter(List<User> listdata) {
             super(itemView);
             // this.imageView = (ImageView) itemView.findViewById(R.id.imageView);
             this.nom = (TextView) itemView.findViewById(R.id.nom);
+            this.distance= (TextView) itemView.findViewById(R.id.distance);
             //this.distance = (TextView) itemView.findViewById(R.id.distance);
             //this.request=itemView.findViewById(R.id.request);
             linearLayout =itemView.findViewById(R.id.linearLayout);
@@ -48,6 +50,7 @@ public demandeLivreAdapter(List<User> listdata) {
 
 
            nom.setText(item.getNom()+" "+item.getPrenom());
+           distance.setText(item.getVille());
 
         }
 

@@ -143,8 +143,8 @@ public class descriptionMyBook extends AppCompatActivity {
             public void onClick(View v){
 
                 Intent intent = new Intent(v.getContext(), DemanderLivre.class);
-                intent.putExtra("id_livre", id_livre);
-                Log.d("livre", id_livre+"");
+                intent.putExtra("id_livre", id_livre+"");
+                //Log.d("livre", id_livre+"");
                 startActivity(intent);
 
             }

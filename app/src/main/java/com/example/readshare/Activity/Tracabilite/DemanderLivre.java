@@ -51,13 +51,13 @@ public class DemanderLivre extends MyMenu {
 
         Intent intent = getIntent();
         Log.d("livre", Long.parseLong(intent.getStringExtra("id_livre"))+"");
-        long id_livre = Long.parseLong(intent.getStringExtra("id_livre"));
+        String id_livre = intent.getStringExtra("id_livre");
 
 
        /*Intent intent = getIntent();
         genre =intent.getStringExtra("genre");*/
         Call<List<User>> call;
-        call = service.getTracabilite(id_livre);
+        call = service.getTracabilite(Long.parseLong(id_livre));
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");
