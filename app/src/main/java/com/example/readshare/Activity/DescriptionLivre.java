@@ -121,8 +121,9 @@ public class DescriptionLivre  extends MyMenu {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),Profile.class);
+                Intent intent=new Intent(getApplicationContext(),Profile_book.class);
                 intent.putExtra("user", livre.getUser_actuel());
+                Log.d("widad", "widad");
                 startActivity(intent);
             }
         });

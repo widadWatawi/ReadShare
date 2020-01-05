@@ -15,12 +15,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.readshare.Activity.Acceuil;
 import com.example.readshare.Activity.DescriptionLivre;
 import com.example.readshare.Model.Historique;
 import com.example.readshare.Model.Livre;
 import com.example.readshare.Network.HistoriqueService;
 import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.R;
+import com.example.readshare.descriptionMyBook;
 
 import java.util.List;
 
@@ -32,6 +34,8 @@ public class FragmentHistory extends Fragment {
     GridView gridView;
     HistoriqueAdapter historiqueAdapter;
     View v;
+
+    long id_user;
 
     public FragmentHistory(){
 
@@ -45,10 +49,10 @@ public class FragmentHistory extends Fragment {
         HistoriqueService service = RetrofitClient.getClient().create(HistoriqueService.class);
 
         SharedPreferences prefs = this.getActivity().getSharedPreferences("UserFile", Context.MODE_PRIVATE);
-        long id = prefs.getLong("idUser",0);
+        id_user = prefs.getLong("idUser",0);
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Historique>> call = service.getHistorique(id);
+        Call<List<Historique>> call = service.getHistorique(id_user);
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");
@@ -58,7 +62,6 @@ public class FragmentHistory extends Fragment {
 
             @Override
             public void onResponse(Call<List<Historique>> call, Response<List<Historique>> response) {
-                Log.d("widad","widad");
                 if (response.isSuccessful()) {
 
                     List<Historique> historiques = response.body();
@@ -90,9 +93,22 @@ public class FragmentHistory extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Historique historique =empDataList.get(position);
-                Intent intent = new Intent(v.getContext(), DescriptionLivre.class);
-                intent.putExtra("livreId", historique.getLivre().getId()+"");
-                startActivity(intent);
+
+                Log.d("user", historique.getLivre().getUser_actuel().getId()+"" );
+                Log.d("user", id_user+"");
+                if(id_user == historique.getLivre().getUser_actuel().getId()) {
+
+                    Intent intent = new Intent(v.getContext(), descriptionMyBook.class);
+                    intent.putExtra("livreId", historique.getLivre().getId()+"");
+                    startActivity(intent);
+                }
+
+                else {
+                    Intent intent = new Intent(v.getContext(), DescriptionLivre.class);
+                    intent.putExtra("livreId", historique.getLivre().getId()+"");
+                    startActivity(intent);
+                }
+
             }
         });
     }

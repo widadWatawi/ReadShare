@@ -42,7 +42,6 @@
 
 
         <activity android:name=".Activity.MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,10 +59,21 @@
         </activity>
 
 
-        <activity android:name=".Activity.DemandeLivre.DemanderLivre"></activity>
+        <activity android:name=".Activity.DemandeLivre.DemanderLivre"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <activity android:name=".Activity.Tracabilite.DemanderLivre"
+            android:theme="@style/AppTheme.NoActionBar">
 
 
-        <activity android:name=".Activity.LivrePropose.DemanderLivre">
+
+
+        </activity>
+
+
+        <activity android:name=".Activity.LivrePropose.DemanderLivre" android:theme="@style/AppTheme.NoActionBar">
 
 
 
@@ -87,6 +97,10 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Activity.ModifierProfile" />
         <activity android:name=".Activity.Profile"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".Activity.Profile_book"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 

@@ -24,6 +24,7 @@ import com.example.readshare.Network.LivreService;
 import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.OnItemClickListener;
 import com.example.readshare.R;
+import com.example.readshare.descriptionMyBook;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -121,7 +122,7 @@ public class FragmentLibrary extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Livre livre =empDataList.get(position);
-                Intent intent = new Intent(v.getContext(), DescriptionLivre.class);
+                Intent intent = new Intent(v.getContext(), descriptionMyBook.class);
                 intent.putExtra("livreId", livre.getId()+"");
                 startActivity(intent);
             }

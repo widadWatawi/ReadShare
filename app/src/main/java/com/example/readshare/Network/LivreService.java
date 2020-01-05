@@ -1,6 +1,7 @@
 package com.example.readshare.Network;
 
 import com.example.readshare.Model.Livre;
+import com.example.readshare.Model.User;
 
 import java.util.List;
 
@@ -28,4 +29,8 @@ public interface LivreService {
 
     @GET("api/library/{id}")
     Call<List<Livre>> getLibrary(@Path("id") Long id);
+
+
+    @GET("api/livres/tracabilite/{id}")
+    Call<List<User>> getTracabilite(@Path("id") Long id);
 }

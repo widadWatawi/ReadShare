@@ -3,6 +3,7 @@ package com.example.readshare.Activity;
 import android.content.Intent;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import com.example.readshare.Model.Livre;
 import com.example.readshare.Network.LivreService;
 import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.R;
+import com.example.readshare.descriptionMyBook;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,10 +140,19 @@ public class Acceuil extends MyMenu {
         mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
             @Override
             public void onItemClick(Livre livre){
-                Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
-                intent.putExtra("livreId", livre.getId()+"");
+                SharedPreferences prefs = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                if(id == livre.getUser_actuel().getId()) {
+                    Intent intent = new Intent(Acceuil.this, descriptionMyBook.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
 
-                startActivity(intent);
+                else {
+                    Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
             }
         });
         LinearLayoutManager layoutManager_note = new LinearLayoutManager(
@@ -158,9 +169,19 @@ public class Acceuil extends MyMenu {
          mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
             @Override
             public void onItemClick(Livre livre){
-                Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
-                intent.putExtra("livreId", livre.getId()+"");
-                startActivity(intent);
+                SharedPreferences prefs = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                if(id == livre.getUser_actuel().getId()) {
+                    Intent intent = new Intent(Acceuil.this, descriptionMyBook.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
+
+                else {
+                    Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
             }
         });
         LinearLayoutManager layoutManager_note = new LinearLayoutManager(
@@ -178,10 +199,19 @@ public class Acceuil extends MyMenu {
         mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
             @Override
                 public void onItemClick(Livre livre){
-                Log.d("id","baba");
-                Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
-                intent.putExtra("livreId", livre.getId()+"");
-                startActivity(intent);
+                SharedPreferences prefs = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                if(id == livre.getUser_actuel().getId()) {
+                    Intent intent = new Intent(Acceuil.this, descriptionMyBook.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
+
+                else {
+                    Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
             }
         });
 
