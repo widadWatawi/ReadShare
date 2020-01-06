@@ -151,14 +151,19 @@ public class descriptionMyBook extends AppCompatActivity {
         });
 
         new HttpReqTask3().execute();
-        if(IsFavoris){
-            ImageView layout=findViewById(R.id.heart_icon); //get the layout object.
-            layout.setImageResource (R.drawable.ic_favorite);
-        }else{
-            ImageView layout=findViewById(R.id.heart_icon); //get the layout object.
-            layout.setImageResource (R.drawable.ic_favorite_border);
+        try {
+            if (IsFavoris) {
+                ImageView layout = findViewById(R.id.heart_icon); //get the layout object.
+                layout.setImageResource(R.drawable.ic_favorite);
+            } else {
+                ImageView layout = findViewById(R.id.heart_icon); //get the layout object.
+                layout.setImageResource(R.drawable.ic_favorite_border);
+            }
+        }catch(Exception e){
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(getApplicationContext(), "connection failed", duration);
+            toast.show();
         }
-
         image.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
