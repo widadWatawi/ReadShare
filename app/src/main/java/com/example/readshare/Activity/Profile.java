@@ -73,6 +73,7 @@ public class Profile extends MyMenu {
         editBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(getApplicationContext(), ModifierProfile.class);
+                intent.putExtra("login",user.getLogin());
                 startActivity(intent);
             }
 

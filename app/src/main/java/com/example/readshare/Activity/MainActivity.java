@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             PasswordEt = findViewById(R.id.etPassword);
             try{
 
-                String apiUrl = "http://192.168.1.107:8081/rest/login/{login}/{password}";
+                String apiUrl = "http://192.168.0.165:8081/rest/login/{login}/{password}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();

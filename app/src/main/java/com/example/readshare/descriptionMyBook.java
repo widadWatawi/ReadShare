@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.example.readshare.Activity.Acceuil;
 import com.example.readshare.Activity.DescriptionLivre;
 import com.example.readshare.Activity.MainActivity;
+import com.example.readshare.Activity.ModifierLivre;
 import com.example.readshare.Activity.RechercheLivre.MyMenu;
 import com.example.readshare.Activity.Tracabilite.DemanderLivre;
 import com.example.readshare.Model.Livre;
@@ -123,7 +124,8 @@ public class descriptionMyBook extends AppCompatActivity {
         btnModify.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
-                Intent intent = new Intent(getApplicationContext(), MyMenu.class);
+                Intent intent = new Intent(getApplicationContext(), ModifierLivre.class);
+                intent.putExtra("livreId",id_livre);
                 startActivity(intent);
             }
         });
@@ -186,7 +188,7 @@ public class descriptionMyBook extends AppCompatActivity {
 
             try{
 
-                String apiUrl = "http://192.168.1.107:8081/api/deleteBook/{id}";
+                String apiUrl = "http://192.168.0.165:8081/api/deleteBook/{id}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();
@@ -241,14 +243,14 @@ public class descriptionMyBook extends AppCompatActivity {
 
             try{
 
-                String apiUrl = "http://192.168.1.107:8081/Favoris/addFavoris/{idUser}/{idLivre}";
+                String apiUrl = "http://192.168.0.165:8081/Favoris/addFavoris/{idUser}/{idLivre}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();
 
                 //id a recuperer
 
-                params.put("idLivre", 18);
+                params.put("idLivre", id_livre);
 
                 SharedPreferences prefs = getSharedPreferences("UserFile",Context.MODE_PRIVATE);
                 long id = prefs.getLong("idUser",0);
@@ -283,7 +285,7 @@ public class descriptionMyBook extends AppCompatActivity {
 
             try{
 
-                String apiUrl = "http://192.168.1.107:8081/Favoris/IsFavoris/{idUser}/{idLivre}";
+                String apiUrl = "http://192.168.0.165:8081/Favoris/IsFavoris/{idUser}/{idLivre}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();
