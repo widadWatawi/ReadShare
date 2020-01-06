@@ -68,7 +68,7 @@ public class DescriptionLivre  extends MyMenu {
 
 
     Livre livre;
-    Long id_livre;
+    long id_livre = 5;
 
     @BindView(R.id.send_request)
     Button sendRequest;
@@ -86,7 +86,7 @@ public class DescriptionLivre  extends MyMenu {
 
         Intent intent = getIntent();
 
-        id_livre = Long.parseLong(intent.getStringExtra("livreId"));
+        ///////////////////id_livre = Long.parseLong(intent.getStringExtra("livreId"));
 
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
 

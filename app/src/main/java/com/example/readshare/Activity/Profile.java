@@ -52,6 +52,9 @@ public class Profile extends MyMenu {
     @BindView(R.id.edit_user)
     TextView editBtn;
 
+    @BindView(R.id.delete_user)
+    TextView deleteBtn;
+
     User user;
 
     int id = 3;
@@ -79,6 +82,12 @@ public class Profile extends MyMenu {
 
         });
 
+        deleteBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+
+            }
+
+        });
 
     }
 

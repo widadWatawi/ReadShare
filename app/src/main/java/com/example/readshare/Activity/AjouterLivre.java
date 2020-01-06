@@ -142,8 +142,8 @@ public class AjouterLivre extends MyMenu {
             super.onPostExecute(rr);
             int duration = Toast.LENGTH_SHORT;
             if(!rr.getSuccess()){
-                Toast toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
-                toast.show();
+                //Toast toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
+                //toast.show();
             }
 
 

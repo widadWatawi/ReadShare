@@ -69,7 +69,7 @@ public class descriptionMyBook extends AppCompatActivity {
 
 
     Boolean IsFavoris = false;
-    long id_livre;
+    long id_livre = 15;
     Livre livre;
 
     @Override
@@ -85,12 +85,12 @@ public class descriptionMyBook extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        id_livre = Long.parseLong(intent.getStringExtra("livreId"));
+        //id_livre = Long.parseLong(intent.getStringExtra("livreId"));
 
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
 
        // Intent intent = getIntent();
-        //id_livre = Long.parseLong(intent.getStringExtra("livreId"));
+        //////////////////////id_livre = Long.parseLong(intent.getStringExtra("livreId"));
 
         /*Call the method with parameter in the interface to get the employee data*/
         Call<Livre> call = service.getLivre(id_livre);
@@ -175,14 +175,14 @@ public class descriptionMyBook extends AppCompatActivity {
             }
         });
     }
-    public class HttpReqTask extends AsyncTask<Void,Void, ResponseAuth> {
+    public class HttpReqTask extends AsyncTask<Void,Void, ResponseRegist> {
 
 
 
 
         @SuppressLint("WrongThread")
         @Override
-        protected ResponseAuth doInBackground(Void... voids) {
+        protected ResponseRegist doInBackground(Void... voids) {
 
 
 
@@ -195,14 +195,14 @@ public class descriptionMyBook extends AppCompatActivity {
 
                 params.put("id", id_livre);
 
-                ResponseAuth ro = rt.getForObject(apiUrl,ResponseAuth.class,params);
+                ResponseRegist ro = rt.getForObject(apiUrl,ResponseRegist.class,params);
                 return ro;
             }catch(Exception ex){
                 Log.e("###################",ex.getMessage());
             }
             return null;
         }
-        protected void onPostExecute(ResponseAuth ro){
+        protected void onPostExecute(ResponseRegist ro){
             super.onPostExecute(ro);
             try{
                 if(!ro.getSuccess()){
