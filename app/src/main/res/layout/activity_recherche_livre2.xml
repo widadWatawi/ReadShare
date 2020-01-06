@@ -22,11 +22,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".70"/>
-            <Button
-                android:id="@+id/cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/cancel"/>
+
         </LinearLayout>
 
         <TableLayout
@@ -40,11 +36,11 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/row"
                     android:orientation="vertical">
 
                     <Button
                         android:background="@drawable/cupid"
+                        android:id="@+id/romance"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:padding="30dp"

@@ -1,5 +1,9 @@
 package com.example.readshare.Activity.DemandeLivre;
 
+
+import android.app.Activity;
+import android.content.Intent;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import com.example.readshare.Activity.DescriptionLivre;
+
 import com.example.readshare.Activity.RechercheLivre.MyMenu;
+
 import com.example.readshare.Model.Livre;
 import com.example.readshare.Network.LivreService;
 import com.example.readshare.Network.RetrofitClient;
@@ -26,11 +34,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
+
 public class DemanderLivre extends MyMenu {
 
 
     RecyclerView recyclerView;
     demandeLivreAdapter adapter;
+
+    String genre;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,8 +55,11 @@ public class DemanderLivre extends MyMenu {
         /*Create handle for the RetrofitInstance interface*/
         LivreService service = RetrofitClient.getClient().create(LivreService.class);
 
-        /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Livre>> call = service.getLivres();
+
+       /*Intent intent = getIntent();
+        genre =intent.getStringExtra("genre");*/
+        Call<List<Livre>> call;
+        call = service.getLivres();
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");
@@ -71,7 +86,14 @@ public class DemanderLivre extends MyMenu {
         private void generateEmployeeList(List<Livre> empDataList) {
             recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-            adapter = new demandeLivreAdapter(empDataList);
+            adapter = new demandeLivreAdapter(empDataList,new demandeLivreAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Livre livre){
+                Intent intent = new Intent(DemanderLivre.this, DescriptionLivre.class);
+                intent.putExtra("livreId", livre.getId()+"");
+                startActivity(intent);
+            }
+        });
 
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DemanderLivre.this);
 
@@ -79,6 +101,8 @@ public class DemanderLivre extends MyMenu {
 
             recyclerView.setAdapter(adapter);
         }
+
+
 
 
     }

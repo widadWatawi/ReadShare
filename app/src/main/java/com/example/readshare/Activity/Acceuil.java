@@ -1,6 +1,9 @@
 package com.example.readshare.Activity;
 
+import android.content.Intent;
+
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +23,7 @@ import com.example.readshare.Model.Livre;
 import com.example.readshare.Network.LivreService;
 import com.example.readshare.Network.RetrofitClient;
 import com.example.readshare.R;
+import com.example.readshare.descriptionMyBook;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -133,7 +137,24 @@ public class Acceuil extends MyMenu {
     private void generateEmployeeList_note(List<Livre> empDataList) {
 
         recyclerView_note = findViewById(R.id.recycler_note);
-       mainAdapter = new MainAdapter(empDataList);
+        mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Livre livre){
+                SharedPreferences prefs = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                if(id == livre.getUser_actuel().getId()) {
+                    Intent intent = new Intent(Acceuil.this, descriptionMyBook.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
+
+                else {
+                    Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
+            }
+        });
         LinearLayoutManager layoutManager_note = new LinearLayoutManager(
                 Acceuil.this,LinearLayoutManager.HORIZONTAL,false
         );
@@ -145,7 +166,24 @@ public class Acceuil extends MyMenu {
     private void generateEmployeeList_last(List<Livre> empDataList) {
 
         recyclerView_last = findViewById(R.id.recycler_last);
-        mainAdapter = new MainAdapter(empDataList);
+         mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Livre livre){
+                SharedPreferences prefs = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                if(id == livre.getUser_actuel().getId()) {
+                    Intent intent = new Intent(Acceuil.this, descriptionMyBook.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
+
+                else {
+                    Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
+            }
+        });
         LinearLayoutManager layoutManager_note = new LinearLayoutManager(
                 Acceuil.this,LinearLayoutManager.HORIZONTAL,false
         );
@@ -156,10 +194,26 @@ public class Acceuil extends MyMenu {
 
 
     private void generateEmployeeList(List<Livre> empDataList) {
+
        recyclerView = findViewById(R.id.recycler_view);
+        mainAdapter = new MainAdapter(empDataList,new MainAdapter.OnItemClickListener(){
+            @Override
+                public void onItemClick(Livre livre){
+                SharedPreferences prefs = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                if(id == livre.getUser_actuel().getId()) {
+                    Intent intent = new Intent(Acceuil.this, descriptionMyBook.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
 
-
-        mainAdapter = new MainAdapter(empDataList);
+                else {
+                    Intent intent = new Intent(Acceuil.this, DescriptionLivre.class);
+                    intent.putExtra("livreId", livre.getId() + "");
+                    startActivity(intent);
+                }
+            }
+        });
 
      LinearLayoutManager layoutManager = new LinearLayoutManager(
                 Acceuil.this,LinearLayoutManager.HORIZONTAL,false
@@ -188,4 +242,12 @@ public class Acceuil extends MyMenu {
         V_flipper.setInAnimation(this,android.R.anim.slide_in_left);
         V_flipper.setOutAnimation(this,android.R.anim.slide_out_right);
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(Acceuil.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+
+    }
+
 }

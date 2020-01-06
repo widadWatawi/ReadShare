@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.readshare.Activity.RechercheLivre.MyMenu;
 import com.example.readshare.R;
 import com.example.readshare.ResponseAuth;
 import com.example.readshare.ResponseRegist;
@@ -25,7 +27,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AjouterLivre extends AppCompatActivity {
+public class AjouterLivre extends MyMenu {
 
     EditText titre, auteur,description,genre;
     Button addBook;
@@ -34,7 +36,10 @@ public class AjouterLivre extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ajouter_livre);
+        LayoutInflater inflater = (LayoutInflater) this
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.ajouter_livre, null, false);
+        drawer.addView(contentView, 0);
 
 
         addBook = findViewById(R.id.btnadd);
@@ -61,12 +66,12 @@ public class AjouterLivre extends AppCompatActivity {
             description =findViewById(R.id.description);
             try{
 
-                String apiUrl = "http://192.168.0.165:8081/api/addBook/{titre}/{auteur}/{genre}/{date}/{description}/{note}/{photo}";
+                String apiUrl = "http://192.168.0.165:8081/api/addBook/{titre}/{auteur}/{genre}/{date}/{description}/{note}/{photo}/{id_actual}";
                 RestTemplate rt = new RestTemplate();
                 rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Map<String, Object> params = new HashMap<>();
 
-                //id a recuperer
+
                 params.put("titre", titre.getText().toString());
                 params.put("auteur", auteur.getText().toString());
                 params.put("genre", genre.getText().toString());
@@ -74,6 +79,10 @@ public class AjouterLivre extends AppCompatActivity {
                 params.put("note", 5);
                 params.put("description", description.getText().toString());
                 params.put("photo", " ");
+
+                SharedPreferences prefs = getSharedPreferences("UserFile",Context.MODE_PRIVATE);
+                long id = prefs.getLong("idUser",0);
+                params.put("id_actual", id);
 
                 ResponseRegist rr = rt.getForObject(apiUrl,ResponseRegist.class,params);
                 return rr;
@@ -132,8 +141,11 @@ public class AjouterLivre extends AppCompatActivity {
         protected void onPostExecute(ResponseRegist rr){
             super.onPostExecute(rr);
             int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
-            toast.show();
+            if(!rr.getSuccess()){
+                Toast toast = Toast.makeText(getApplicationContext(), rr.getMessage(), duration);
+                toast.show();
+            }
+
 
 
 

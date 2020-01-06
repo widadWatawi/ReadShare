@@ -12,52 +12,102 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".Activity.bibliotheque"
             android:label="@string/title_activity_bibliotheque"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
+
         </activity>
         <activity android:name=".descriptionMyBook"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".Activity.Message"
             android:label="@string/title_activity_message"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.RechercheLivre.RechercheLivre2" />
-        <activity android:name=".Activity.Inscription" />
-        <activity android:name=".AjouterLivre"></activity>
-        <activity android:name=".Activity.MainActivity"></activity>
-        <activity android:name=".Activity.Acceuil"></activity>
+
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Activity.RechercheLivre.RechercheLivre2"></activity>
+        <activity android:name=".Activity.Inscription"></activity>
+        <activity android:name=".AjouterLivre">
+
+        </activity>
+
+
+
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
+        <activity android:name=".Activity.Acceuil"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+
         <activity android:name=".Activity.DemandeLivre.DemanderLivre"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Activity.AjouterLivre"
-        android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".Activity.Tracabilite.DemanderLivre"
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+
+
+        </activity>
+
+
+        <activity android:name=".Activity.LivrePropose.DemanderLivre" android:theme="@style/AppTheme.NoActionBar">
+
+
+
+        </activity>
+
+
+        <activity android:name=".Activity.AjouterLivre" android:theme="@style/AppTheme.NoActionBar">
+
+
+
+
+        </activity>
+
+
         <activity android:name=".Activity.Authentification" />
         <activity android:name=".Activity.BiblioEchange" />
-        <activity android:name=".Activity.DescriptionLivre"
-            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".Activity.DescriptionLivre"  android:theme="@style/AppTheme.NoActionBar"> </activity>
+
         <activity android:name=".Activity.ModifierLivre"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activity.ModifierProfile" />
+        <activity android:name=".Activity.ModifierProfile" android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.Profile"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <activity android:name=".Activity.Profile_book"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity android:name=".Activity.RechercheLivre.RechercheLivre" />
         <activity
             android:name=".Activity.RechercheLivre.MyMenu"

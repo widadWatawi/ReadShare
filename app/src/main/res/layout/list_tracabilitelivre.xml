@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+
+    >
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.7"
+        >
+
+
+
+    <ImageView
+         android:id="@+id/imageView"
+         android:layout_width="100dp"
+         android:layout_height="110dp"
+         android:layout_centerVertical="true"
+         android:layout_alignParentStart="true"
+         android:scaleType="fitXY"
+         android:layout_marginBottom="15dp"
+         android:layout_marginTop="15dp"
+         android:layout_marginLeft="10dp"
+         android:layout_alignParentLeft="true"
+
+         android:background="@drawable/img1"
+
+         />
+        <!--android:background="@drawable/border">-->
+
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#333"
+        android:textSize="16sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="right">
+
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_below="@id/nom"
+        android:drawableLeft="@drawable/ic_place"
+        android:layout_gravity="right"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="70dp"
+        android:textColor="#333"
+        android:textSize="16sp"/>
+
+    </LinearLayout>
+</LinearLayout>
+

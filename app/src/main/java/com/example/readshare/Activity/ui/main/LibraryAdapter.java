@@ -1,14 +1,19 @@
 package com.example.readshare.Activity.ui.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.readshare.Activity.DemandeLivre.demandeLivreAdapter;
+import com.example.readshare.Activity.DescriptionLivre;
 import com.example.readshare.Model.Livre;
+import com.example.readshare.OnItemClickListener;
 import com.example.readshare.R;
 
 import java.util.List;
@@ -18,9 +23,13 @@ public class LibraryAdapter extends BaseAdapter {
     private List<Livre> liste;
     View view;
 
+
+
     public LibraryAdapter(Context context,List<Livre> liste) {
         this.context=context;
         this.liste = liste;
+
+
     }
 
 
@@ -51,5 +60,9 @@ public class LibraryAdapter extends BaseAdapter {
             textView.setText(liste.get(position).getTitre());
         }
         return view;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(Livre livre);
     }
 }

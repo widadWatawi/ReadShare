@@ -7,12 +7,13 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface DemandeService {
 
-    @GET("demande/1/recu")
-    Call<List<Demande>> getDemandesRecues();
+    @GET("demande/{id}/recu")
+    Call<List<Demande>> getDemandesRecues(@Path("id") Long id);
 
-    @GET("demande/2/envoye")
-    Call<List<Demande>> getDemandesEnvoyes();
+    @GET("demande/{id}/envoye")
+    Call<List<Demande>> getDemandesEnvoyes(@Path("id") Long id);
 }
