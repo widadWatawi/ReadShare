@@ -25,6 +25,7 @@
         <activity android:name=".descriptionMyBook"
             android:theme="@style/AppTheme.NoActionBar">
 
+
         </activity>
         <activity
             android:name=".Activity.Message"

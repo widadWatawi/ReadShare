@@ -16,6 +16,7 @@
     <color name="colorAccent">#E56059</color>
     <color name="title_color">#72BEA4</color>
     <color name="textInputLayout">#96ffffff</color>
+    <color name="TransparentGray">#4f0e0d0e</color>
 
     <color name="calendar_active_month_bg">#ffffff</color>
     <color name="calendar_bg">#ffffff</color>
